@@ -20,10 +20,9 @@ class Plugin extends PluginBase
         return [
             'name'        => 'smart.catalogue::lang.plugin.name',
             'description' => 'smart.catalogue::lang.plugin.description',
-            'author'      => 'Winter CMS',
+            'author'      => 'Ivan Puljiz',
             'icon'        => 'icon-pencil',
-            'homepage'    => 'hhttps://github.com/fumi77/wn-catalogue-plugin',
-            'replaces'    => ['Smart.Catalogue' => '<= 1.0.1'],
+            'homepage'    => 'hhttps://github.com/fumi77/wn-catalogue-plugin'
         ];
     }
 

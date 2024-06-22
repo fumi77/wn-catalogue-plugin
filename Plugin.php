@@ -23,7 +23,7 @@ class Plugin extends PluginBase
             'author'      => 'Winter CMS',
             'icon'        => 'icon-pencil',
             'homepage'    => 'https://github.com/wintercms/wn-catalogue-plugin',
-            'replaces'    => ['Smart.Catalogue' => '<= 1.7.0'],
+            'replaces'    => ['Smart.Catalogue' => '<= 1.0.1'],
         ];
     }
 

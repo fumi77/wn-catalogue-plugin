@@ -5,15 +5,15 @@
 columns:
 
     id: ID
-    title: winter.catalogue::lang.post.title
-    content: winter.catalogue::lang.post.content
-    content_html: winter.catalogue::lang.post.content_html
-    excerpt: winter.catalogue::lang.post.excerpt
-    slug: winter.catalogue::lang.post.slug
-    categories: winter.catalogue::lang.post.categories
-    author_email: winter.catalogue::lang.post.author_email
-    featured_image_urls: winter.catalogue::lang.post.featured_images
-    created_at: winter.catalogue::lang.post.created_date
-    updated_at: winter.catalogue::lang.post.updated_date
-    published: winter.catalogue::lang.post.published
-    published_at: winter.catalogue::lang.post.published_date
+    title: smart.catalogue::lang.post.title
+    content: smart.catalogue::lang.post.content
+    content_html: smart.catalogue::lang.post.content_html
+    excerpt: smart.catalogue::lang.post.excerpt
+    slug: smart.catalogue::lang.post.slug
+    categories: smart.catalogue::lang.post.categories
+    author_email: smart.catalogue::lang.post.author_email
+    featured_image_urls: smart.catalogue::lang.post.featured_images
+    created_at: smart.catalogue::lang.post.created_date
+    updated_at: smart.catalogue::lang.post.updated_date
+    published: smart.catalogue::lang.post.published
+    published_at: smart.catalogue::lang.post.published_date

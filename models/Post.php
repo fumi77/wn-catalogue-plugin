@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Catalogue\Models;
+namespace Smart\Catalogue\Models;
 
 use Backend\Models\User;
 use BackendAuth;
@@ -15,7 +15,7 @@ use Model;
 use System\Models\File;
 use Url;
 use ValidationException;
-use Winter\Catalogue\Classes\TagProcessor;
+use Smart\Catalogue\Classes\TagProcessor;
 use Winter\Pages\Classes\MenuItem;
 use Winter\Sitemap\Classes\DefinitionItem;
 use Winter\Storm\Database\NestedTreeScope;
@@ -26,7 +26,7 @@ use Winter\Storm\Router\Router;
  */
 class Post extends Model
 {
-    use \Winter\Catalogue\Traits\Urlable;
+    use \Smart\Catalogue\Traits\Urlable;
     use \Winter\Storm\Database\Traits\Validation;
 
     public $table = 'smart_catalogue_posts';
@@ -75,15 +75,15 @@ class Post extends Model
      * @var array
      */
     public static $allowedSortingOptions = [
-        'title asc'         => 'winter.catalogue::lang.sorting.title_asc',
-        'title desc'        => 'winter.catalogue::lang.sorting.title_desc',
-        'created_at asc'    => 'winter.catalogue::lang.sorting.created_asc',
-        'created_at desc'   => 'winter.catalogue::lang.sorting.created_desc',
-        'updated_at asc'    => 'winter.catalogue::lang.sorting.updated_asc',
-        'updated_at desc'   => 'winter.catalogue::lang.sorting.updated_desc',
-        'published_at asc'  => 'winter.catalogue::lang.sorting.published_asc',
-        'published_at desc' => 'winter.catalogue::lang.sorting.published_desc',
-        'random'            => 'winter.catalogue::lang.sorting.random',
+        'title asc'         => 'smart.catalogue::lang.sorting.title_asc',
+        'title desc'        => 'smart.catalogue::lang.sorting.title_desc',
+        'created_at asc'    => 'smart.catalogue::lang.sorting.created_asc',
+        'created_at desc'   => 'smart.catalogue::lang.sorting.created_desc',
+        'updated_at asc'    => 'smart.catalogue::lang.sorting.updated_asc',
+        'updated_at desc'   => 'smart.catalogue::lang.sorting.updated_desc',
+        'published_at asc'  => 'smart.catalogue::lang.sorting.published_asc',
+        'published_at desc' => 'smart.catalogue::lang.sorting.published_desc',
+        'random'            => 'smart.catalogue::lang.sorting.random',
     ];
 
     /*
@@ -153,7 +153,7 @@ class Post extends Model
 
         $user = BackendAuth::getUser();
 
-        if (!$user->hasAnyAccess(['winter.catalogue.access_publish'])) {
+        if (!$user->hasAnyAccess(['smart.catalogue.access_publish'])) {
             $fields->published->hidden = true;
             $fields->published_at->hidden = true;
         }
@@ -167,7 +167,7 @@ class Post extends Model
     {
         if ($this->published && !$this->published_at) {
             throw new ValidationException([
-               'published_at' => Lang::get('winter.catalogue::lang.post.published_validation')
+               'published_at' => Lang::get('smart.catalogue::lang.post.published_validation')
             ]);
         }
     }
@@ -178,7 +178,7 @@ class Post extends Model
      */
     public function canEdit(User $user): bool
     {
-        return ($this->user_id === $user->id) || $user->hasAnyAccess(['winter.catalogue.access_other_posts']);
+        return ($this->user_id === $user->id) || $user->hasAnyAccess(['smart.catalogue.access_other_posts']);
     }
 
     public static function formatHtml($input, $preview = false)

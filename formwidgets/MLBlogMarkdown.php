@@ -1,15 +1,15 @@
 <?php
 
-namespace Winter\Catalogue\FormWidgets;
+namespace Smart\Catalogue\FormWidgets;
 
-use Winter\Catalogue\Models\Post;
+use Smart\Catalogue\Models\Post;
 use Winter\Translate\Models\Locale;
 
 /**
  * A multi-lingual version of the catalogue markdown editor.
  * This class should never be invoked without the Winter.Translate plugin.
  *
- * @package winter\catalogue
+ * @package smart\catalogue
  * @author Alexey Bobkov, Samuel Georges
  */
 class MLCatalogueMarkdown extends CatalogueMarkdown

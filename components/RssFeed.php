@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Catalogue\Components;
+namespace Smart\Catalogue\Components;
 
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
@@ -8,8 +8,8 @@ use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Lang;
 use Response;
-use Winter\Catalogue\Models\Category as CatalogueCategory;
-use Winter\Catalogue\Models\Post as CataloguePost;
+use Smart\Catalogue\Models\Category as CatalogueCategory;
+use Smart\Catalogue\Models\Post as CataloguePost;
 use Winter\Storm\Router\UrlGenerator;
 
 class RssFeed extends ComponentBase
@@ -37,8 +37,8 @@ class RssFeed extends ComponentBase
     public function componentDetails(): array
     {
         return [
-            'name'        => 'winter.catalogue::lang.settings.rssfeed_title',
-            'description' => 'winter.catalogue::lang.settings.rssfeed_description'
+            'name'        => 'smart.catalogue::lang.settings.rssfeed_title',
+            'description' => 'smart.catalogue::lang.settings.rssfeed_description'
         ];
     }
 
@@ -46,37 +46,37 @@ class RssFeed extends ComponentBase
     {
         return [
             'categoryFilter' => [
-                'title'       => 'winter.catalogue::lang.settings.posts_filter',
-                'description' => 'winter.catalogue::lang.settings.posts_filter_description',
+                'title'       => 'smart.catalogue::lang.settings.posts_filter',
+                'description' => 'smart.catalogue::lang.settings.posts_filter_description',
                 'type'        => 'string',
                 'default'     => '',
             ],
             'sortOrder' => [
-                'title'       => 'winter.catalogue::lang.settings.posts_order',
-                'description' => 'winter.catalogue::lang.settings.posts_order_description',
+                'title'       => 'smart.catalogue::lang.settings.posts_order',
+                'description' => 'smart.catalogue::lang.settings.posts_order_description',
                 'type'        => 'dropdown',
                 'default'     => 'created_at desc',
             ],
             'postsPerPage' => [
-                'title'             => 'winter.catalogue::lang.settings.posts_per_page',
+                'title'             => 'smart.catalogue::lang.settings.posts_per_page',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'winter.catalogue::lang.settings.posts_per_page_validation',
+                'validationMessage' => 'smart.catalogue::lang.settings.posts_per_page_validation',
                 'default'           => '10',
             ],
             'cataloguePage' => [
-                'title'       => 'winter.catalogue::lang.settings.rssfeed_catalogue',
-                'description' => 'winter.catalogue::lang.settings.rssfeed_catalogue_description',
+                'title'       => 'smart.catalogue::lang.settings.rssfeed_catalogue',
+                'description' => 'smart.catalogue::lang.settings.rssfeed_catalogue_description',
                 'type'        => 'dropdown',
                 'default'     => 'catalogue/post',
-                'group'       => 'winter.catalogue::lang.settings.group_links',
+                'group'       => 'smart.catalogue::lang.settings.group_links',
             ],
             'postPage' => [
-                'title'       => 'winter.catalogue::lang.settings.posts_post',
-                'description' => 'winter.catalogue::lang.settings.posts_post_description',
+                'title'       => 'smart.catalogue::lang.settings.posts_post',
+                'description' => 'smart.catalogue::lang.settings.posts_post_description',
                 'type'        => 'dropdown',
                 'default'     => 'catalogue/post',
-                'group'       => 'winter.catalogue::lang.settings.group_links',
+                'group'       => 'smart.catalogue::lang.settings.group_links',
             ],
         ];
     }

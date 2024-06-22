@@ -1,4 +1,4 @@
-<?php namespace Winter\Catalogue\Updates;
+<?php namespace Smart\Catalogue\Updates;
 
 use Winter\Storm\Database\Updates\Migration;
 use DbDongle;

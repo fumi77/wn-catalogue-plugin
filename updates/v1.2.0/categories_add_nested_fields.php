@@ -1,8 +1,8 @@
-<?php namespace Winter\Catalogue\Updates;
+<?php namespace Smart\Catalogue\Updates;
 
 use Schema;
 use Winter\Storm\Database\Updates\Migration;
-use Winter\Catalogue\Models\Category;
+use Smart\Catalogue\Models\Category;
 
 class CategoriesAddNestedFields extends Migration
 {

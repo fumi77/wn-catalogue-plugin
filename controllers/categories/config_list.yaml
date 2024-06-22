@@ -6,13 +6,13 @@
 list: ~/plugins/smart/catalogue/models/category/columns.yaml
 
 # Model Class name
-modelClass: Winter\Catalogue\Models\Category
+modelClass: Smart\Catalogue\Models\Category
 
 # List Title
-title: winter.catalogue::lang.categories.list_title
+title: smart.catalogue::lang.categories.list_title
 
 # Link URL for each record
-recordUrl: winter/catalogue/categories/update/:id
+recordUrl: smart/catalogue/categories/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

@@ -1,11 +1,11 @@
 <?php
 
-namespace Winter\Catalogue\Classes;
+namespace Smart\Catalogue\Classes;
 
 /**
  * Catalogue Markdown tag processor.
  *
- * @package winter\catalogue
+ * @package smart\catalogue
  * @author Alexey Bobkov, Samuel Georges
  */
 class TagProcessor

@@ -2,15 +2,15 @@
 #  Form Behavior Config
 # ===================================
 
-name: winter.catalogue::lang.catalogue.create_category
+name: smart.catalogue::lang.catalogue.create_category
 form: ~/plugins/smart/catalogue/models/category/fields.yaml
-modelClass: Winter\Catalogue\Models\Category
-defaultRedirect: winter/catalogue/categories
+modelClass: Smart\Catalogue\Models\Category
+defaultRedirect: smart/catalogue/categories
 
 create:
-    redirect: winter/catalogue/categories/update/:id
-    redirectClose: winter/catalogue/categories
+    redirect: smart/catalogue/categories/update/:id
+    redirectClose: smart/catalogue/categories
 
 update:
-    redirect: winter/catalogue/categories
-    redirectClose: winter/catalogue/categories
+    redirect: smart/catalogue/categories
+    redirectClose: smart/catalogue/categories

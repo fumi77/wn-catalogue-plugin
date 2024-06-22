@@ -2,8 +2,8 @@ tabs:
     fields:
         show_all_posts:
             span: left
-            label: winter.catalogue::lang.catalogue.show_all_posts_label
-            comment: winter.catalogue::lang.catalogue.show_all_posts_comment
+            label: smart.catalogue::lang.catalogue.show_all_posts_label
+            comment: smart.catalogue::lang.catalogue.show_all_posts_comment
             type: switch
             default: 1
-            tab: winter.catalogue::lang.catalogue.tab_general
+            tab: smart.catalogue::lang.catalogue.tab_general

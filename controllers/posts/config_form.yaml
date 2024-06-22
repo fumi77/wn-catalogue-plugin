@@ -2,15 +2,15 @@
 #  Form Behavior Config
 # ===================================
 
-name: winter.catalogue::lang.catalogue.create_post
+name: smart.catalogue::lang.catalogue.create_post
 form: ~/plugins/smart/catalogue/models/post/fields.yaml
-modelClass: Winter\Catalogue\Models\Post
-defaultRedirect: winter/catalogue/posts
+modelClass: Smart\Catalogue\Models\Post
+defaultRedirect: smart/catalogue/posts
 
 create:
-    redirect: winter/catalogue/posts/update/:id
-    redirectClose: winter/catalogue/posts
+    redirect: smart/catalogue/posts/update/:id
+    redirectClose: smart/catalogue/posts
 
 update:
-    redirect: winter/catalogue/posts
-    redirectClose: winter/catalogue/posts
+    redirect: smart/catalogue/posts
+    redirectClose: smart/catalogue/posts

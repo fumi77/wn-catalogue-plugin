@@ -3,13 +3,13 @@
 # ===================================
 
 # Reorder Title
-title: winter.catalogue::lang.category.reorder
+title: smart.catalogue::lang.category.reorder
 
 # Attribute name
 nameFrom: name
 
 # Model Class name
-modelClass: Winter\Catalogue\Models\Category
+modelClass: Smart\Catalogue\Models\Category
 
 # Toolbar widget configuration
 toolbar:

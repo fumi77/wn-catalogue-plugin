@@ -5,7 +5,7 @@
 columns:
 
     title:
-        label: winter.catalogue::lang.post.title
+        label: smart.catalogue::lang.post.title
         searchable: true
 
     # author:
@@ -15,22 +15,22 @@ columns:
     #   searchable: true
 
     categories:
-        label: winter.catalogue::lang.post.categories
+        label: smart.catalogue::lang.post.categories
         relation: categories
         select: name
         searchable: true
         sortable: false
 
     created_at:
-        label: winter.catalogue::lang.post.created
+        label: smart.catalogue::lang.post.created
         type: date
         invisible: true
 
     updated_at:
-        label: winter.catalogue::lang.post.updated
+        label: smart.catalogue::lang.post.updated
         type: date
         invisible: true
 
     published_at:
-        label: winter.catalogue::lang.post.published
+        label: smart.catalogue::lang.post.published
         type: date

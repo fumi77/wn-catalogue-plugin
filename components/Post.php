@@ -1,12 +1,12 @@
 <?php
 
-namespace Winter\Catalogue\Components;
+namespace Smart\Catalogue\Components;
 
 use BackendAuth;
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use Event;
-use Winter\Catalogue\Models\Post as CataloguePost;
+use Smart\Catalogue\Models\Post as CataloguePost;
 
 class Post extends ComponentBase
 {
@@ -23,8 +23,8 @@ class Post extends ComponentBase
     public function componentDetails(): array
     {
         return [
-            'name'        => 'winter.catalogue::lang.settings.post_title',
-            'description' => 'winter.catalogue::lang.settings.post_description'
+            'name'        => 'smart.catalogue::lang.settings.post_title',
+            'description' => 'smart.catalogue::lang.settings.post_description'
         ];
     }
 
@@ -32,14 +32,14 @@ class Post extends ComponentBase
     {
         return [
             'slug' => [
-                'title'       => 'winter.catalogue::lang.settings.post_slug',
-                'description' => 'winter.catalogue::lang.settings.post_slug_description',
+                'title'       => 'smart.catalogue::lang.settings.post_slug',
+                'description' => 'smart.catalogue::lang.settings.post_slug_description',
                 'default'     => '{{ :slug }}',
                 'type'        => 'string',
             ],
             'categoryPage' => [
-                'title'       => 'winter.catalogue::lang.settings.post_category',
-                'description' => 'winter.catalogue::lang.settings.post_category_description',
+                'title'       => 'smart.catalogue::lang.settings.post_category',
+                'description' => 'smart.catalogue::lang.settings.post_category_description',
                 'type'        => 'dropdown',
                 'default'     => 'catalogue/category',
             ],
@@ -153,6 +153,6 @@ class Post extends ComponentBase
     {
         $backendUser = BackendAuth::getUser();
 
-        return $backendUser && $backendUser->hasAccess('winter.catalogue.access_posts');
+        return $backendUser && $backendUser->hasAccess('smart.catalogue.access_posts');
     }
 }

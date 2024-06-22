@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Catalogue\Models;
+namespace Smart\Catalogue\Models;
 
 use Cms\Classes\Page as CmsPage;
 use Cms\Classes\Theme;
@@ -12,7 +12,7 @@ use Winter\Sitemap\Classes\DefinitionItem;
 
 class Category extends Model
 {
-    use \Winter\Catalogue\Traits\Urlable;
+    use \Smart\Catalogue\Traits\Urlable;
     use \Winter\Storm\Database\Traits\NestedTree;
     use \Winter\Storm\Database\Traits\Validation;
 

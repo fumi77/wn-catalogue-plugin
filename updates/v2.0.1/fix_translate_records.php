@@ -1,4 +1,4 @@
-<?php namespace Winter\Catalogue\Updates;
+<?php namespace Smart\Catalogue\Updates;
 
 use Db;
 use Schema;

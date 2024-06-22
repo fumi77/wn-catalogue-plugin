@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Catalogue\Models;
+namespace Smart\Catalogue\Models;
 
 use ApplicationException;
 use Backend\Models\ImportModel;

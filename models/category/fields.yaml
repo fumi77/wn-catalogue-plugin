@@ -5,18 +5,18 @@
 fields:
 
     name:
-        label: winter.catalogue::lang.category.name
-        placeholder: winter.catalogue::lang.category.name_placeholder
+        label: smart.catalogue::lang.category.name
+        placeholder: smart.catalogue::lang.category.name_placeholder
         span: left
 
     slug:
-        label: winter.catalogue::lang.category.slug
+        label: smart.catalogue::lang.category.slug
         span: right
-        placeholder: winter.catalogue::lang.category.slug_placeholder
+        placeholder: smart.catalogue::lang.category.slug_placeholder
         preset: name
 
     description:
-        label: 'winter.catalogue::lang.category.description'
+        label: 'smart.catalogue::lang.category.description'
         size: large
         span: full
         type: textarea

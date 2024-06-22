@@ -1,8 +1,8 @@
-<?php namespace Winter\Catalogue\Updates;
+<?php namespace Smart\Catalogue\Updates;
 
 use Carbon\Carbon;
-use Winter\Catalogue\Models\Post;
-use Winter\Catalogue\Models\Category;
+use Smart\Catalogue\Models\Post;
+use Smart\Catalogue\Models\Category;
 use Winter\Storm\Database\Updates\Seeder;
 
 class SeedAllTables extends Seeder
@@ -34,7 +34,7 @@ You can edit this content by selecting **Catalogue** from the administration bac
         });
 
         Category::create([
-            'name' => trans('winter.catalogue::lang.categories.uncategorized'),
+            'name' => trans('smart.catalogue::lang.categories.uncategorized'),
             'slug' => 'uncategorized',
         ]);
 

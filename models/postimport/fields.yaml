@@ -5,22 +5,22 @@
 fields:
 
     update_existing:
-        label: winter.catalogue::lang.import.update_existing_label
-        comment: winter.catalogue::lang.import.update_existing_comment
+        label: smart.catalogue::lang.import.update_existing_label
+        comment: smart.catalogue::lang.import.update_existing_comment
         type: checkbox
         default: true
         span: left
 
     auto_create_categories:
-        label: winter.catalogue::lang.import.auto_create_categories_label
-        comment: winter.catalogue::lang.import.auto_create_categories_comment
+        label: smart.catalogue::lang.import.auto_create_categories_label
+        comment: smart.catalogue::lang.import.auto_create_categories_comment
         type: checkbox
         default: true
         span: right
 
     categories:
-        label: winter.catalogue::lang.import.categories_label
-        commentAbove: winter.catalogue::lang.import.categories_comment
+        label: smart.catalogue::lang.import.categories_label
+        commentAbove: smart.catalogue::lang.import.categories_comment
         type: checkboxlist
         span: right
         cssClass: field-indent
@@ -30,8 +30,8 @@ fields:
             condition: checked
 
     default_author:
-        label: winter.catalogue::lang.import.default_author_label
-        comment: winter.catalogue::lang.import.default_author_comment
+        label: smart.catalogue::lang.import.default_author_label
+        comment: smart.catalogue::lang.import.default_author_comment
         type: dropdown
-        placeholder: winter.catalogue::lang.import.default_author_placeholder
+        placeholder: smart.catalogue::lang.import.default_author_placeholder
         span: left

@@ -1,12 +1,12 @@
 <?php
 
-namespace Winter\Catalogue\Controllers;
+namespace Smart\Catalogue\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
 use Flash;
 use Lang;
-use Winter\Catalogue\Models\Post;
+use Smart\Catalogue\Models\Post;
 
 class Posts extends Controller
 {
@@ -16,7 +16,7 @@ class Posts extends Controller
         \Backend\Behaviors\ImportExportController::class
     ];
 
-    public $requiredPermissions = ['winter.catalogue.access_other_posts', 'winter.catalogue.access_posts'];
+    public $requiredPermissions = ['smart.catalogue.access_other_posts', 'smart.catalogue.access_posts'];
 
     public function __construct()
     {
@@ -39,8 +39,8 @@ class Posts extends Controller
         BackendMenu::setContextSideMenu('new_post');
 
         $this->bodyClass = 'compact-container';
-        $this->addCss('/plugins/smart/catalogue/assets/css/winter.catalogue-preview.css');
-        $this->addJs('/plugins/winter/catalogue/assets/js/post-form.js');
+        $this->addCss('/plugins/smart/catalogue/assets/css/smart.catalogue-preview.css');
+        $this->addJs('/plugins/smart/catalogue/assets/js/post-form.js');
 
         return $this->asExtension('FormController')->create();
     }
@@ -48,7 +48,7 @@ class Posts extends Controller
     public function update($recordId = null)
     {
         $this->bodyClass = 'compact-container';
-        $this->addCss('/plugins/smart/catalogue/assets/css/winter.catalogue-preview.css');
+        $this->addCss('/plugins/smart/catalogue/assets/css/smart.catalogue-preview.css');
         $this->addJs('/plugins/smart/catalogue/assets/js/post-form.js');
 
         return $this->asExtension('FormController')->update($recordId);
@@ -56,21 +56,21 @@ class Posts extends Controller
 
     public function export()
     {
-        $this->addCss('/plugins/smart/catalogue/assets/css/winter.catalogue-export.css');
+        $this->addCss('/plugins/smart/catalogue/assets/css/smart.catalogue-export.css');
 
         return $this->asExtension('ImportExportController')->export();
     }
 
     public function listExtendQuery($query)
     {
-        if (!$this->user->hasAnyAccess(['winter.catalogue.access_other_posts'])) {
+        if (!$this->user->hasAnyAccess(['smart.catalogue.access_other_posts'])) {
             $query->where('user_id', $this->user->id);
         }
     }
 
     public function formExtendQuery($query)
     {
-        if (!$this->user->hasAnyAccess(['winter.catalogue.access_other_posts'])) {
+        if (!$this->user->hasAnyAccess(['smart.catalogue.access_other_posts'])) {
             $query->where('user_id', $this->user->id);
         }
     }
@@ -92,7 +92,7 @@ class Posts extends Controller
         // Fix can be more restrictive checks here or finishing changes to the class loader so that
         // disabled plugins cannot even have their classes loaded.
         if ($model instanceof Post && $model->isClassExtendedWith('Winter.Translate.Behaviors.TranslatableModel')) {
-            $widget->tabs['fields']['content']['type'] = 'Winter\Catalogue\FormWidgets\MLCatalogueMarkdown';
+            $widget->tabs['fields']['content']['type'] = 'Smart\Catalogue\FormWidgets\MLCatalogueMarkdown';
         }
     }
 
@@ -108,7 +108,7 @@ class Posts extends Controller
                 $post->delete();
             }
 
-            Flash::success(Lang::get('winter.catalogue::lang.post.delete_success'));
+            Flash::success(Lang::get('smart.catalogue::lang.post.delete_success'));
         }
 
         return $this->listRefresh();

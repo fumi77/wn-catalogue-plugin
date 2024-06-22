@@ -5,9 +5,9 @@
 columns:
 
     name:
-        label: winter.catalogue::lang.category.name
+        label: smart.catalogue::lang.category.name
         searchable: true
 
     post_count:
-        label: winter.catalogue::lang.category.posts
+        label: smart.catalogue::lang.category.posts
         sortable: false

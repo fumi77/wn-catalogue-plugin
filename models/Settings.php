@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Catalogue\Models;
+namespace Smart\Catalogue\Models;
 
 use Winter\Storm\Database\Model;
 

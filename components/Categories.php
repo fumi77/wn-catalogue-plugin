@@ -1,11 +1,11 @@
 <?php
 
-namespace Winter\Catalogue\Components;
+namespace Smart\Catalogue\Components;
 
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use Illuminate\Support\Collection;
-use Winter\Catalogue\Models\Category as CatalogueCategory;
+use Smart\Catalogue\Models\Category as CatalogueCategory;
 
 class Categories extends ComponentBase
 {
@@ -27,8 +27,8 @@ class Categories extends ComponentBase
     public function componentDetails(): array
     {
         return [
-            'name'        => 'winter.catalogue::lang.settings.category_title',
-            'description' => 'winter.catalogue::lang.settings.category_description'
+            'name'        => 'smart.catalogue::lang.settings.category_title',
+            'description' => 'smart.catalogue::lang.settings.category_description'
         ];
     }
 
@@ -36,23 +36,23 @@ class Categories extends ComponentBase
     {
         return [
             'slug' => [
-                'title'       => 'winter.catalogue::lang.settings.category_slug',
-                'description' => 'winter.catalogue::lang.settings.category_slug_description',
+                'title'       => 'smart.catalogue::lang.settings.category_slug',
+                'description' => 'smart.catalogue::lang.settings.category_slug_description',
                 'default'     => '{{ :slug }}',
                 'type'        => 'string',
             ],
             'displayEmpty' => [
-                'title'       => 'winter.catalogue::lang.settings.category_display_empty',
-                'description' => 'winter.catalogue::lang.settings.category_display_empty_description',
+                'title'       => 'smart.catalogue::lang.settings.category_display_empty',
+                'description' => 'smart.catalogue::lang.settings.category_display_empty_description',
                 'type'        => 'checkbox',
                 'default'     => 0,
             ],
             'categoryPage' => [
-                'title'       => 'winter.catalogue::lang.settings.category_page',
-                'description' => 'winter.catalogue::lang.settings.category_page_description',
+                'title'       => 'smart.catalogue::lang.settings.category_page',
+                'description' => 'smart.catalogue::lang.settings.category_page_description',
                 'type'        => 'dropdown',
                 'default'     => 'catalogue/category',
-                'group'       => 'winter.catalogue::lang.settings.group_links',
+                'group'       => 'smart.catalogue::lang.settings.group_links',
             ],
         ];
     }

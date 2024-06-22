@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Catalogue\Components;
+namespace Smart\Catalogue\Components;
 
 use BackendAuth;
 use Cms\Classes\ComponentBase;
@@ -8,9 +8,9 @@ use Cms\Classes\Page;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Lang;
 use Redirect;
-use Winter\Catalogue\Models\Category as CatalogueCategory;
-use Winter\Catalogue\Models\Post as CataloguePost;
-use Winter\Catalogue\Models\Settings as CatalogueSettings;
+use Smart\Catalogue\Models\Category as CatalogueCategory;
+use Smart\Catalogue\Models\Post as CataloguePost;
+use Smart\Catalogue\Models\Settings as CatalogueSettings;
 use Winter\Storm\Database\Collection;
 use Winter\Storm\Database\Model;
 
@@ -54,8 +54,8 @@ class Posts extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'winter.catalogue::lang.settings.posts_title',
-            'description' => 'winter.catalogue::lang.settings.posts_description'
+            'name'        => 'smart.catalogue::lang.settings.posts_title',
+            'description' => 'smart.catalogue::lang.settings.posts_description'
         ];
     }
 
@@ -63,68 +63,68 @@ class Posts extends ComponentBase
     {
         return [
             'pageNumber' => [
-                'title'       => 'winter.catalogue::lang.settings.posts_pagination',
-                'description' => 'winter.catalogue::lang.settings.posts_pagination_description',
+                'title'       => 'smart.catalogue::lang.settings.posts_pagination',
+                'description' => 'smart.catalogue::lang.settings.posts_pagination_description',
                 'type'        => 'string',
                 'default'     => '{{ :page }}',
             ],
             'categoryFilter' => [
-                'title'       => 'winter.catalogue::lang.settings.posts_filter',
-                'description' => 'winter.catalogue::lang.settings.posts_filter_description',
+                'title'       => 'smart.catalogue::lang.settings.posts_filter',
+                'description' => 'smart.catalogue::lang.settings.posts_filter_description',
                 'type'        => 'string',
                 'default'     => '',
             ],
             'postsPerPage' => [
-                'title'             => 'winter.catalogue::lang.settings.posts_per_page',
+                'title'             => 'smart.catalogue::lang.settings.posts_per_page',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'winter.catalogue::lang.settings.posts_per_page_validation',
+                'validationMessage' => 'smart.catalogue::lang.settings.posts_per_page_validation',
                 'default'           => '10',
             ],
             'noPostsMessage' => [
-                'title'             => 'winter.catalogue::lang.settings.posts_no_posts',
-                'description'       => 'winter.catalogue::lang.settings.posts_no_posts_description',
+                'title'             => 'smart.catalogue::lang.settings.posts_no_posts',
+                'description'       => 'smart.catalogue::lang.settings.posts_no_posts_description',
                 'type'              => 'string',
-                'default'           => Lang::get('winter.catalogue::lang.settings.posts_no_posts_default'),
+                'default'           => Lang::get('smart.catalogue::lang.settings.posts_no_posts_default'),
                 'showExternalParam' => false,
             ],
             'sortOrder' => [
-                'title'       => 'winter.catalogue::lang.settings.posts_order',
-                'description' => 'winter.catalogue::lang.settings.posts_order_description',
+                'title'       => 'smart.catalogue::lang.settings.posts_order',
+                'description' => 'smart.catalogue::lang.settings.posts_order_description',
                 'type'        => 'dropdown',
                 'default'     => 'published_at desc',
             ],
             'categoryPage' => [
-                'title'       => 'winter.catalogue::lang.settings.posts_category',
-                'description' => 'winter.catalogue::lang.settings.posts_category_description',
+                'title'       => 'smart.catalogue::lang.settings.posts_category',
+                'description' => 'smart.catalogue::lang.settings.posts_category_description',
                 'type'        => 'dropdown',
                 'default'     => 'catalogue/category',
-                'group'       => 'winter.catalogue::lang.settings.group_links',
+                'group'       => 'smart.catalogue::lang.settings.group_links',
             ],
             'postPage' => [
-                'title'       => 'winter.catalogue::lang.settings.posts_post',
-                'description' => 'winter.catalogue::lang.settings.posts_post_description',
+                'title'       => 'smart.catalogue::lang.settings.posts_post',
+                'description' => 'smart.catalogue::lang.settings.posts_post_description',
                 'type'        => 'dropdown',
                 'default'     => 'catalogue/post',
-                'group'       => 'winter.catalogue::lang.settings.group_links',
+                'group'       => 'smart.catalogue::lang.settings.group_links',
             ],
             'exceptPost' => [
-                'title'             => 'winter.catalogue::lang.settings.posts_except_post',
-                'description'       => 'winter.catalogue::lang.settings.posts_except_post_description',
+                'title'             => 'smart.catalogue::lang.settings.posts_except_post',
+                'description'       => 'smart.catalogue::lang.settings.posts_except_post_description',
                 'type'              => 'string',
                 'validationPattern' => '^[a-z0-9\-_,\s]+$',
-                'validationMessage' => 'winter.catalogue::lang.settings.posts_except_post_validation',
+                'validationMessage' => 'smart.catalogue::lang.settings.posts_except_post_validation',
                 'default'           => '',
-                'group'             => 'winter.catalogue::lang.settings.group_exceptions',
+                'group'             => 'smart.catalogue::lang.settings.group_exceptions',
             ],
             'exceptCategories' => [
-                'title'             => 'winter.catalogue::lang.settings.posts_except_categories',
-                'description'       => 'winter.catalogue::lang.settings.posts_except_categories_description',
+                'title'             => 'smart.catalogue::lang.settings.posts_except_categories',
+                'description'       => 'smart.catalogue::lang.settings.posts_except_categories_description',
                 'type'              => 'string',
                 'validationPattern' => '^[a-z0-9\-_,\s]+$',
-                'validationMessage' => 'winter.catalogue::lang.settings.posts_except_categories_validation',
+                'validationMessage' => 'smart.catalogue::lang.settings.posts_except_categories_validation',
                 'default'           => '',
-                'group'             => 'winter.catalogue::lang.settings.group_exceptions',
+                'group'             => 'smart.catalogue::lang.settings.group_exceptions',
             ],
         ];
     }
@@ -245,6 +245,6 @@ class Posts extends ComponentBase
     {
         $backendUser = BackendAuth::getUser();
 
-        return $backendUser && $backendUser->hasAccess('winter.catalogue.access_posts') && CatalogueSettings::get('show_all_posts', true);
+        return $backendUser && $backendUser->hasAccess('smart.catalogue.access_posts') && CatalogueSettings::get('show_all_posts', true);
     }
 }

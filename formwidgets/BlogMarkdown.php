@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Catalogue\FormWidgets;
+namespace Smart\Catalogue\FormWidgets;
 
 use Backend\FormWidgets\MarkdownEditor;
 use Exception;
@@ -11,12 +11,12 @@ use System\Models\File;
 use SystemException;
 use ValidationException;
 use Validator;
-use Winter\Catalogue\Models\Post as PostModel;
+use Smart\Catalogue\Models\Post as PostModel;
 
 /**
  * Special markdown editor for the Create/Edit Post form.
  *
- * @package winter\catalogue
+ * @package smart\catalogue
  * @author Alexey Bobkov, Samuel Georges
  */
 class CatalogueMarkdown extends MarkdownEditor

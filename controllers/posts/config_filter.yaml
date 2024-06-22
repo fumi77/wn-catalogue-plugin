@@ -7,10 +7,10 @@ scopes:
     category:
 
         # Filter name
-        label: winter.catalogue::lang.posts.filter_category
+        label: smart.catalogue::lang.posts.filter_category
 
         # Model Class name
-        modelClass: Winter\Catalogue\Models\Category
+        modelClass: Smart\Catalogue\Models\Category
 
         # Model attribute to display for the name
         nameFrom: name
@@ -21,7 +21,7 @@ scopes:
     published:
 
         # Filter name
-        label: winter.catalogue::lang.posts.filter_published
+        label: smart.catalogue::lang.posts.filter_published
 
         # Filter type
         type: switch
@@ -34,7 +34,7 @@ scopes:
     published_date:
 
         # Filter name
-        label: winter.catalogue::lang.posts.filter_date
+        label: smart.catalogue::lang.posts.filter_date
 
         # Filter type
         type: daterange

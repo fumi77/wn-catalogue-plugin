@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Catalogue\Models;
+namespace Smart\Catalogue\Models;
 
 use Backend\Models\ExportModel;
 
@@ -23,7 +23,7 @@ class PostExport extends ExportModel
 
     public $belongsToMany = [
         'post_categories' => [
-            'Winter\Catalogue\Models\Category',
+            'Smart\Catalogue\Models\Category',
             'table'    => 'smart_catalogue_posts_categories',
             'key'      => 'post_id',
             'otherKey' => 'category_id'

@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Catalogue\Traits;
+namespace Smart\Catalogue\Traits;
 
 use App;
 use Cms\Classes\Controller;

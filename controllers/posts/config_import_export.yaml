@@ -4,38 +4,38 @@
 
 import:
     # Page title
-    title: winter.catalogue::lang.posts.import_post
+    title: smart.catalogue::lang.posts.import_post
 
     # Import List Column configuration
-    list: $/winter/catalogue/models/postimport/columns.yaml
+    list: $/smart/catalogue/models/postimport/columns.yaml
 
     # Import Form Field configuration
-    form: $/winter/catalogue/models/postimport/fields.yaml
+    form: $/smart/catalogue/models/postimport/fields.yaml
 
     # Import Model class
-    modelClass: Winter\Catalogue\Models\PostImport
+    modelClass: Smart\Catalogue\Models\PostImport
 
     # Redirect when finished
-    redirect: winter/catalogue/posts
+    redirect: smart/catalogue/posts
 
     # Required permissions
-    permissions: winter.catalogue.access_import_export
+    permissions: smart.catalogue.access_import_export
 
 export:
     # Page title
-    title: winter.catalogue::lang.posts.export_post
+    title: smart.catalogue::lang.posts.export_post
 
     # Output file name
     fileName: posts.csv
 
     # Export List Column configuration
-    list: $/winter/catalogue/models/postexport/columns.yaml
+    list: $/smart/catalogue/models/postexport/columns.yaml
 
     # Export Model class
-    modelClass: Winter\Catalogue\Models\PostExport
+    modelClass: Smart\Catalogue\Models\PostExport
 
     # Redirect when finished
-    redirect: winter/catalogue/posts
+    redirect: smart/catalogue/posts
 
     # Required permissions
-    permissions: winter.catalogue.access_import_export
+    permissions: smart.catalogue.access_import_export

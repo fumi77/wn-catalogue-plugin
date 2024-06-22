@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Blog\Models;
+namespace Winter\Catalogue\Models;
 
 use Backend\Models\ExportModel;
 
@@ -9,7 +9,7 @@ use Backend\Models\ExportModel;
  */
 class PostExport extends ExportModel
 {
-    public $table = 'winter_blog_posts';
+    public $table = 'smart_catalogue_posts';
 
     /**
      * @var array Relations
@@ -23,8 +23,8 @@ class PostExport extends ExportModel
 
     public $belongsToMany = [
         'post_categories' => [
-            'Winter\Blog\Models\Category',
-            'table'    => 'winter_blog_posts_categories',
+            'Winter\Catalogue\Models\Category',
+            'table'    => 'smart_catalogue_posts_categories',
             'key'      => 'post_id',
             'otherKey' => 'category_id'
         ]
@@ -35,7 +35,7 @@ class PostExport extends ExportModel
             'System\Models\File',
             'order' => 'sort_order',
             'key' => 'attachment_id',
-            'conditions' => "field = 'featured_images' AND attachment_type = 'Winter\\\\Blog\\\\Models\\\\Post'"
+            'conditions' => "field = 'featured_images' AND attachment_type = 'Winter\\\\Catalogue\\\\Models\\\\Post'"
         ]
     ];
 

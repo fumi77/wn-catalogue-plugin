@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Blog\Models;
+namespace Winter\Catalogue\Models;
 
 use Winter\Storm\Database\Model;
 
@@ -10,7 +10,7 @@ class Settings extends Model
 
     public $implement = ['System.Behaviors.SettingsModel'];
 
-    public $settingsCode = 'winter_blog_settings';
+    public $settingsCode = 'smart_catalogue_settings';
 
     public $settingsFields = 'fields.yaml';
 

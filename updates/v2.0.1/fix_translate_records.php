@@ -1,4 +1,4 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Winter\Catalogue\Updates;
 
 use Db;
 use Schema;
@@ -35,8 +35,8 @@ class FixTranslateRecords extends Migration
 
         foreach ($tables as $table) {
             foreach (self::MODELS as $model) {
-                $fromModel = $from . '\\Blog\\Models\\' . $model;
-                $toModel = $to . '\\Blog\\Models\\' . $model;
+                $fromModel = $from . '\\Catalogue\\Models\\' . $model;
+                $toModel = $to . '\\Catalogue\\Models\\' . $model;
                 Db::table($table)
                     ->where('model_type', $fromModel)
                     ->update(['model_type' => $toModel]);

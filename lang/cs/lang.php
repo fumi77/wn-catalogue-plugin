@@ -2,19 +2,19 @@
 
 return [
     'plugin' => [
-        'name' => 'Blog',
-        'description' => 'Robustní blogová platforma.'
+        'name' => 'Catalogue',
+        'description' => 'Robustní catalogueová platforma.'
     ],
-    'blog' => [
-        'menu_label' => 'Blog',
-        'menu_description' => 'Správa blogových příspěvků',
+    'catalogue' => [
+        'menu_label' => 'Catalogue',
+        'menu_description' => 'Správa catalogueových příspěvků',
         'posts' => 'Příspěvky',
         'create_post' => 'Příspěvek',
         'categories' => 'Kategorie',
         'create_category' => 'Kategorie příspěvků',
-        'tab' => 'Blog',
-        'access_posts' => 'Správa blogových příspěvků',
-        'access_categories' => 'Správa blogových kategorií',
+        'tab' => 'Catalogue',
+        'access_posts' => 'Správa catalogueových příspěvků',
+        'access_categories' => 'Správa catalogueových kategorií',
         'access_other_posts' => 'Správa příspěvků ostatních uživatelů',
         'access_import_export' => 'Možnost importu a exportu příspěvků',
         'access_publish' => 'Možnost publikovat příspěvky',
@@ -24,7 +24,7 @@ return [
         'chart_total' => 'Celkem',
     ],
     'posts' => [
-        'list_title' => 'Správa blogových příspěvků',
+        'list_title' => 'Správa catalogueových příspěvků',
         'filter_category' => 'Kategorie',
         'filter_published' => 'Schovat publikované',
         'filter_date' => 'Datum',
@@ -63,7 +63,7 @@ return [
         'return_to_posts' => 'Zpět na seznam příspěvků',
     ],
     'categories' => [
-        'list_title' => 'Správa blogových kategorií',
+        'list_title' => 'Správa catalogueových kategorií',
         'new_category' => 'Nová kategorie',
         'uncategorized' => 'Nezařazeno',
     ],
@@ -76,27 +76,27 @@ return [
         'posts' => 'Počet příspěvků',
         'delete_confirm' => 'Opravdu chcete smazat tuto kategorii?',
         'delete_success' => 'Vybrané kategorie úspěšně odstraněny.',
-        'return_to_categories' => 'Zpět na seznam blogových kategorií',
+        'return_to_categories' => 'Zpět na seznam catalogueových kategorií',
         'reorder' => 'Změnit pořadí',
     ],
     'menuitem' => [
-        'blog_category' => 'Blogová kategorie',
-        'all_blog_categories' => 'Všechny blogové kategorie',
-        'blog_post' => 'Blogový příspěvek',
-        'all_blog_posts' => 'Všechny blogové příspěvky',
-        'category_blog_posts' => 'Blog category posts'
+        'catalogue_category' => 'Catalogueová kategorie',
+        'all_catalogue_categories' => 'Všechny catalogueové kategorie',
+        'catalogue_post' => 'Catalogueový příspěvek',
+        'all_catalogue_posts' => 'Všechny catalogueové příspěvky',
+        'category_catalogue_posts' => 'Catalogue category posts'
     ],
     'settings' => [
         'category_title' => 'Seznam kategorií',
-        'category_description' => 'Zobrazí na stránce seznam blogových kategorií.',
+        'category_description' => 'Zobrazí na stránce seznam catalogueových kategorií.',
         'category_slug' => 'URL kategorie',
-        'category_slug_description' => "Najde blogovou kategorii s tímto URL. Používá se pro zobrazení aktivní kategorie.",
+        'category_slug_description' => "Najde catalogueovou kategorii s tímto URL. Používá se pro zobrazení aktivní kategorie.",
         'category_display_empty' => 'Zobrazit prázdné kategorie',
-        'category_display_empty_description' => 'Zobrazit kategorie bez blogových příspěvků.',
+        'category_display_empty_description' => 'Zobrazit kategorie bez catalogueových příspěvků.',
         'category_page' => 'Stránka kategorií',
         'category_page_description' => 'Vyberte stránku která slouží k zobrazení všech kategorií (nebo detailu kategorie).',
         'post_title' => 'Příspěvek',
-        'post_description' => 'Zobrazí blogový příspěvek na stránce.',
+        'post_description' => 'Zobrazí catalogueový příspěvek na stránce.',
         'post_slug' => 'URL příspěvku',
         'post_slug_description' => "Najde příspěvek dle zadané URL.",
         'post_category' => 'Stránka kategorie',
@@ -122,10 +122,10 @@ return [
         'posts_except_post_description' => 'Zadejte ID nebo URL příspěvku který chcete vyloučit',
         'posts_except_categories' => 'Vyloučené kategorie',
         'posts_except_categories_description' => 'Pro vyloučení kategorií zadejte čárkou oddělené URL příspěvků nebo proměnnou, která tento seznam obsahuje.',
-        'rssfeed_blog' => 'Blogová stránka',
-        'rssfeed_blog_description' => 'Name of the main blog page file for generating links. This property is used by the default component partial.',
+        'rssfeed_catalogue' => 'Catalogueová stránka',
+        'rssfeed_catalogue_description' => 'Name of the main catalogue page file for generating links. This property is used by the default component partial.',
         'rssfeed_title' => 'RSS Kanál',
-        'rssfeed_description' => 'Vygeneruje RSS kanál který obsahuje blogové příspěvky.',
+        'rssfeed_description' => 'Vygeneruje RSS kanál který obsahuje catalogueové příspěvky.',
         'group_links' => 'Odkazy',
         'group_exceptions' => 'Výjimky'
     ],

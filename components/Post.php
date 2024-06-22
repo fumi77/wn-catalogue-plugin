@@ -1,19 +1,19 @@
 <?php
 
-namespace Winter\Blog\Components;
+namespace Winter\Catalogue\Components;
 
 use BackendAuth;
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use Event;
-use Winter\Blog\Models\Post as BlogPost;
+use Winter\Catalogue\Models\Post as CataloguePost;
 
 class Post extends ComponentBase
 {
     /**
      * The post model used for display.
      */
-    public ?BlogPost $post = null;
+    public ?CataloguePost $post = null;
 
     /**
      * Reference to the page name for linking to categories.
@@ -23,8 +23,8 @@ class Post extends ComponentBase
     public function componentDetails(): array
     {
         return [
-            'name'        => 'winter.blog::lang.settings.post_title',
-            'description' => 'winter.blog::lang.settings.post_description'
+            'name'        => 'winter.catalogue::lang.settings.post_title',
+            'description' => 'winter.catalogue::lang.settings.post_description'
         ];
     }
 
@@ -32,16 +32,16 @@ class Post extends ComponentBase
     {
         return [
             'slug' => [
-                'title'       => 'winter.blog::lang.settings.post_slug',
-                'description' => 'winter.blog::lang.settings.post_slug_description',
+                'title'       => 'winter.catalogue::lang.settings.post_slug',
+                'description' => 'winter.catalogue::lang.settings.post_slug_description',
                 'default'     => '{{ :slug }}',
                 'type'        => 'string',
             ],
             'categoryPage' => [
-                'title'       => 'winter.blog::lang.settings.post_category',
-                'description' => 'winter.blog::lang.settings.post_category_description',
+                'title'       => 'winter.catalogue::lang.settings.post_category',
+                'description' => 'winter.catalogue::lang.settings.post_category_description',
                 'type'        => 'dropdown',
-                'default'     => 'blog/category',
+                'default'     => 'catalogue/category',
             ],
         ];
     }
@@ -57,7 +57,7 @@ class Post extends ComponentBase
             $newParams = $params;
 
             if (isset($params['slug'])) {
-                $records = BlogPost::transWhere('slug', $params['slug'], $oldLocale)->first();
+                $records = CataloguePost::transWhere('slug', $params['slug'], $oldLocale)->first();
                 if ($records) {
                     $records->translateContext($newLocale);
                     $newParams['slug'] = $records['slug'];
@@ -89,7 +89,7 @@ class Post extends ComponentBase
     {
         $slug = $this->property('slug');
 
-        $post = new BlogPost;
+        $post = new CataloguePost;
         $query = $post->query();
 
         if ($post->isClassExtendedWith('Winter.Translate.Behaviors.TranslatableModel')) {
@@ -153,6 +153,6 @@ class Post extends ComponentBase
     {
         $backendUser = BackendAuth::getUser();
 
-        return $backendUser && $backendUser->hasAccess('winter.blog.access_posts');
+        return $backendUser && $backendUser->hasAccess('winter.catalogue.access_posts');
     }
 }

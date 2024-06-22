@@ -5,7 +5,7 @@ return [
         'name' => 'Bài viết',
         'description' => 'Quản lý bài viết'
     ],
-    'blog' => [
+    'catalogue' => [
         'menu_label' => 'Bài viết',
         'menu_description' => 'Quản lý các bài viết',
         'posts' => 'Bài viết',
@@ -90,11 +90,11 @@ return [
         'reorder' => 'Sắp xếp danh mục'
     ],
     'menuitem' => [
-        'blog_category' => 'Danh mục bài viết',
-        'all_blog_categories' => 'Tất cả danh mục bài viết',
-        'blog_post' => 'Bài viết',
-        'all_blog_posts' => 'Tất cả bài viết',
-        'category_blog_posts' => 'Danh mục của bài viết'
+        'catalogue_category' => 'Danh mục bài viết',
+        'all_catalogue_categories' => 'Tất cả danh mục bài viết',
+        'catalogue_post' => 'Bài viết',
+        'all_catalogue_posts' => 'Tất cả bài viết',
+        'category_catalogue_posts' => 'Danh mục của bài viết'
     ],
     'settings' => [
         'category_title' => 'Danh sách danh mục',
@@ -127,15 +127,15 @@ return [
         'posts_category' => 'Trang danh mục',
         'posts_category_description' => 'Tên của tệp trang danh mục cho các liên kết danh mục "Đã đăng vào". Thuộc tính này được sử dụng bởi một phần thành phần mặc định.',
         'posts_post' => 'Trang bài viết',
-        'posts_post_description' => 'Tên của tệp trang bài đăng trên blog cho các liên kết "Tìm hiểu thêm". Thuộc tính này được sử dụng bởi một phần thành phần mặc định.',
+        'posts_post_description' => 'Tên của tệp trang bài đăng trên catalogue cho các liên kết "Tìm hiểu thêm". Thuộc tính này được sử dụng bởi một phần thành phần mặc định.',
         'posts_except_post' => 'Loại trừ bài đăng',
         'posts_except_post_description' => 'Nhập ID / URL hoặc biến có ID / URL bài đăng mà bạn muốn loại trừ. Bạn có thể sử dụng danh sách được phân tách bằng dấu phẩy để chỉ định nhiều bài đăng.',
         'posts_except_post_validation' => 'Ngoại lệ bài đăng phải là một slug hoặc ID duy nhất hoặc danh sách slug và ID được phân tách bằng dấu phẩy',
         'posts_except_categories' => 'Loại trừ danh mục',
         'posts_except_categories_description' => 'Nhập danh sách các slug hoặc biến danh mục được phân tách bằng dấu phẩy với danh sách các danh mục bạn muốn loại trừ',
         'posts_except_categories_validation' => 'Ngoại lệ danh mục phải là một slug danh mục duy nhất hoặc danh sách slug được phân tách bằng dấu phẩy',
-        'rssfeed_blog' => 'Trang bài viết',
-        'rssfeed_blog_description' => 'Tên của tệp trang nội dung bài viết để tạo liên kết. Thuộc tính này được sử dụng bởi một phần thành phần mặc định.',
+        'rssfeed_catalogue' => 'Trang bài viết',
+        'rssfeed_catalogue_description' => 'Tên của tệp trang nội dung bài viết để tạo liên kết. Thuộc tính này được sử dụng bởi một phần thành phần mặc định.',
         'rssfeed_title' => 'Nguồn cấp RSS',
         'rssfeed_description' => 'Tạo nguồn cấp dữ liệu RSS chứa các bài viết.',
         'group_links' => 'Liên kết',

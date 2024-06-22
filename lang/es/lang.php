@@ -2,28 +2,28 @@
 
 return [
     'plugin' => [
-        'name' => 'Blog',
-        'description' => 'Una plataforma robusta de blogging.'
+        'name' => 'Catalogue',
+        'description' => 'Una plataforma robusta de catalogueging.'
     ],
-    'blog' => [
-        'menu_label' => 'Blog',
+    'catalogue' => [
+        'menu_label' => 'Catalogue',
         'menu_description' => 'Administrar Publicaciones',
         'posts' => 'Publicaciones',
         'create_post' => 'Crear publicación',
         'categories' => 'Categorías',
         'create_category' => 'Categoría',
-        'tab' => 'Blog',
+        'tab' => 'Catalogue',
         'access_posts' => 'Administrar las publicaciones',
         'access_categories' => 'Administrar las categorías',
         'access_other_posts' => 'Administrar publicaciones de otros usuarios',
         'access_import_export' => 'Autorizado para importar y exportar publicaciones',
         'access_publish' => 'Autorizado para publicar publicaciones',
-        'manage_settings' => 'Administrar configuración del blog',
+        'manage_settings' => 'Administrar configuración del catalogue',
         'delete_confirm' => '¿Está seguro?',
         'chart_published' => 'Publicado',
         'chart_drafts' => 'Borradores',
         'chart_total' => 'Total',
-        'settings_description' => 'Administrar configuración del blog',
+        'settings_description' => 'Administrar configuración del catalogue',
         'show_all_posts_label' => 'Mostrar todas las publicaciones a los usuarios de backend',
         'show_all_posts_comment' => 'Mostrar las publicaciones publicadas y los borradores a los usuarios de backend',
         'tab_general' => 'General'
@@ -90,11 +90,11 @@ return [
         'reorder' => 'Re-ordenar Categorías'
     ],
     'menuitem' => [
-        'blog_category' => 'Categoría del blog',
-        'all_blog_categories' => 'Todas las categorías del blog',
-        'blog_post' => 'Publicación del blog',
-        'all_blog_posts' => 'Todas las publicaciones del blog',
-        'category_blog_posts' => 'Publicaciones del blog por categorías'
+        'catalogue_category' => 'Categoría del catalogue',
+        'all_catalogue_categories' => 'Todas las categorías del catalogue',
+        'catalogue_post' => 'Publicación del catalogue',
+        'all_catalogue_posts' => 'Todas las publicaciones del catalogue',
+        'category_catalogue_posts' => 'Publicaciones del catalogue por categorías'
     ],
     'settings' => [
         'category_title' => 'Lista de Categorías',
@@ -120,7 +120,7 @@ return [
         'posts_per_page' => 'Publicaciones por página',
         'posts_per_page_validation' => 'Formato inválido para el valor de publicaciones por página',
         'posts_no_posts' => 'Mensaje cuando no hay publicaciones',
-        'posts_no_posts_description' => 'Mensaje que se mostrará en la lista de publicaciones del blog cuando no haya ningúno. Esta propiedad es utilizada dentro del parcial que viene por defecto en el componente.',
+        'posts_no_posts_description' => 'Mensaje que se mostrará en la lista de publicaciones del catalogue cuando no haya ningúno. Esta propiedad es utilizada dentro del parcial que viene por defecto en el componente.',
         'posts_no_posts_default' => 'No se encontraron publicaciones.',
         'posts_order' => 'Ordenar publicaciones por',
         'posts_order_description' => 'Atributo mediante el cual se deberán ordenar las publicaciones',
@@ -134,10 +134,10 @@ return [
         'posts_except_categories' => 'Excluir categorías',
         'posts_except_categories_description' => 'Introduce una lista separada por comas de IDs/URLs de categorías con las categorías a excluir.',
         'posts_except_categories_validation' => 'Las categorías excluidas deben ser una URL de categoría o una lista separada por comas',
-        'rssfeed_blog' => 'Página del blog',
-        'rssfeed_blog_description' => 'Nombre del archivo de página principal para generación de enlaces. Esta propiedad es utilizada dentro del parcial que viene por defecto en el componente.',
+        'rssfeed_catalogue' => 'Página del catalogue',
+        'rssfeed_catalogue_description' => 'Nombre del archivo de página principal para generación de enlaces. Esta propiedad es utilizada dentro del parcial que viene por defecto en el componente.',
         'rssfeed_title' => 'RSS Feed',
-        'rssfeed_description' => 'Genera un feed de RSS con las publicaciones del blog.',
+        'rssfeed_description' => 'Genera un feed de RSS con las publicaciones del catalogue.',
         'group_links' => 'Enlaces',
         'group_exceptions' => 'Excepciones'
     ],

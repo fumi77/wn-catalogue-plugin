@@ -1,11 +1,16 @@
 {
-    "name": "winter/wn-blog-plugin",
+    "name": "smart/wn-catalogue-plugin",
     "type": "winter-plugin",
-    "description": "Blog plugin for Winter CMS",
-    "homepage": "https://github.com/wintercms/wn-blog-plugin",
-    "keywords": ["winter cms", "winter", "plugin", "blog"],
+    "description": "Catalogue plugin for Winter CMS",
+    "homepage": "https://github.com/fumi77/wn-catalogue-plugin",
+    "keywords": ["winter cms", "winter", "plugin", "catalogue"],
     "license": "MIT",
     "authors": [
+        {
+            "name": "Ivan Puljiz",
+            "email": "puljiz@gmail.com",
+            "role": "Upgrade from catalogue"
+        },        
         {
             "name": "Alexey Bobkov",
             "email": "aleksey.bobkov@gmail.com",
@@ -23,18 +28,17 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/wintercms/wn-blog-plugin/issues",
-        "discord": "https://discord.gg/D5MFSPH6Ux",
-        "source": "https://github.com/wintercms/wn-blog-plugin"
+        "issues": "https://github.com/fumi77/wn-catalogue-plugin/issues",
+        "source": "https://github.com/fumi77/wn-catalogue-plugin"
     },
     "require": {
         "php": ">=7.0",
         "composer/installers": "~1.0"
     },
     "replace": {
-        "rainlab/blog-plugin": "~1.3"
+        "smart/catalogue-plugin": "~1.0"
     },
     "extra": {
-        "installer-name": "blog"
+        "installer-name": "catalogue"
     }
 }

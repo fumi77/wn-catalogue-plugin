@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Blog\Models;
+namespace Winter\Catalogue\Models;
 
 use Backend\Models\User;
 use BackendAuth;
@@ -15,7 +15,7 @@ use Model;
 use System\Models\File;
 use Url;
 use ValidationException;
-use Winter\Blog\Classes\TagProcessor;
+use Winter\Catalogue\Classes\TagProcessor;
 use Winter\Pages\Classes\MenuItem;
 use Winter\Sitemap\Classes\DefinitionItem;
 use Winter\Storm\Database\NestedTreeScope;
@@ -26,10 +26,10 @@ use Winter\Storm\Router\Router;
  */
 class Post extends Model
 {
-    use \Winter\Blog\Traits\Urlable;
+    use \Winter\Catalogue\Traits\Urlable;
     use \Winter\Storm\Database\Traits\Validation;
 
-    public $table = 'winter_blog_posts';
+    public $table = 'smart_catalogue_posts';
     public $implement = ['@Winter.Translate.Behaviors.TranslatableModel'];
 
     /*
@@ -75,15 +75,15 @@ class Post extends Model
      * @var array
      */
     public static $allowedSortingOptions = [
-        'title asc'         => 'winter.blog::lang.sorting.title_asc',
-        'title desc'        => 'winter.blog::lang.sorting.title_desc',
-        'created_at asc'    => 'winter.blog::lang.sorting.created_asc',
-        'created_at desc'   => 'winter.blog::lang.sorting.created_desc',
-        'updated_at asc'    => 'winter.blog::lang.sorting.updated_asc',
-        'updated_at desc'   => 'winter.blog::lang.sorting.updated_desc',
-        'published_at asc'  => 'winter.blog::lang.sorting.published_asc',
-        'published_at desc' => 'winter.blog::lang.sorting.published_desc',
-        'random'            => 'winter.blog::lang.sorting.random',
+        'title asc'         => 'winter.catalogue::lang.sorting.title_asc',
+        'title desc'        => 'winter.catalogue::lang.sorting.title_desc',
+        'created_at asc'    => 'winter.catalogue::lang.sorting.created_asc',
+        'created_at desc'   => 'winter.catalogue::lang.sorting.created_desc',
+        'updated_at asc'    => 'winter.catalogue::lang.sorting.updated_asc',
+        'updated_at desc'   => 'winter.catalogue::lang.sorting.updated_desc',
+        'published_at asc'  => 'winter.catalogue::lang.sorting.published_asc',
+        'published_at desc' => 'winter.catalogue::lang.sorting.published_desc',
+        'random'            => 'winter.catalogue::lang.sorting.random',
     ];
 
     /*
@@ -96,7 +96,7 @@ class Post extends Model
     public $belongsToMany = [
         'categories' => [
             Category::class,
-            'table' => 'winter_blog_posts_categories',
+            'table' => 'smart_catalogue_posts_categories',
             'order' => 'name',
         ]
     ];
@@ -123,7 +123,7 @@ class Post extends Model
      */
     public function __construct(array $attributes = [])
     {
-        // Add the content processor for the blog as a local event so that it can be
+        // Add the content processor for the catalogue as a local event so that it can be
         // bypassed by third parties if required.
         $this->bindEvent('model.beforeSave', function () {
             if (empty($this->user)) {
@@ -153,7 +153,7 @@ class Post extends Model
 
         $user = BackendAuth::getUser();
 
-        if (!$user->hasAnyAccess(['winter.blog.access_publish'])) {
+        if (!$user->hasAnyAccess(['winter.catalogue.access_publish'])) {
             $fields->published->hidden = true;
             $fields->published_at->hidden = true;
         }
@@ -167,7 +167,7 @@ class Post extends Model
     {
         if ($this->published && !$this->published_at) {
             throw new ValidationException([
-               'published_at' => Lang::get('winter.blog::lang.post.published_validation')
+               'published_at' => Lang::get('winter.catalogue::lang.post.published_validation')
             ]);
         }
     }
@@ -178,7 +178,7 @@ class Post extends Model
      */
     public function canEdit(User $user): bool
     {
-        return ($this->user_id === $user->id) || $user->hasAnyAccess(['winter.blog.access_other_posts']);
+        return ($this->user_id === $user->id) || $user->hasAnyAccess(['winter.catalogue.access_other_posts']);
     }
 
     public static function formatHtml($input, $preview = false)
@@ -392,7 +392,7 @@ class Post extends Model
         $result = [];
 
         $theme = Theme::getActiveTheme();
-        $pages = CmsPage::listInTheme($theme, true)->withComponent('blogPost', function ($component) {
+        $pages = CmsPage::listInTheme($theme, true)->withComponent('cataloguePost', function ($component) {
             if (!preg_match('/{{\s*:/', $component->property('slug'))) {
                 return false;
             }
@@ -526,7 +526,7 @@ class Post extends Model
     {
         $result = [];
 
-        if ($type == 'blog-post') {
+        if ($type == 'catalogue-post') {
             $references = [];
 
             $posts = self::select('id', 'title')->orderBy('title')->get();
@@ -541,13 +541,13 @@ class Post extends Model
             ];
         }
 
-        if ($type == 'all-blog-posts') {
+        if ($type == 'all-catalogue-posts') {
             $result = [
                 'dynamicItems' => true
             ];
         }
 
-        if ($type == 'category-blog-posts') {
+        if ($type == 'category-catalogue-posts') {
             $references = [];
 
             $categories = Category::orderBy('name')->get();
@@ -568,7 +568,7 @@ class Post extends Model
             $cmsPages = [];
 
             foreach ($pages as $page) {
-                if (!$page->hasComponent('blogPost')) {
+                if (!$page->hasComponent('cataloguePost')) {
                     continue;
                 }
 
@@ -576,7 +576,7 @@ class Post extends Model
                  * Component must use a categoryPage filter with a routing parameter and post slug
                  * eg: categoryPage = "{{ :somevalue }}", slug = "{{ :somevalue }}"
                  */
-                $properties = $page->getComponentProperties('blogPost');
+                $properties = $page->getComponentProperties('cataloguePost');
                 if (!isset($properties['categoryPage']) || !preg_match('/{{\s*:/', $properties['slug'])) {
                     continue;
                 }
@@ -617,7 +617,7 @@ class Post extends Model
             return null;
         }
 
-        if ($item->type == 'blog-post') {
+        if ($item->type == 'catalogue-post') {
             // Attempt to get the post record for a specific post menu item
             if (!$item->reference) {
                 return null;
@@ -644,7 +644,7 @@ class Post extends Model
                 $result['alternateLinks'] = $localizedUrls;
             }
 
-        } elseif ($item->type == 'all-blog-posts') {
+        } elseif ($item->type == 'all-catalogue-posts') {
             $result = [
                 'items' => []
             ];
@@ -667,7 +667,7 @@ class Post extends Model
                 $result['items'][] = $postItem;
             }
 
-        } elseif ($item->type == 'category-blog-posts') {
+        } elseif ($item->type == 'category-catalogue-posts') {
             if (!$item->reference) {
                 return null;
             }
@@ -730,7 +730,7 @@ class Post extends Model
             $params['day']   = $this->published_at->format('d');
         }
 
-        $paramName = $this->getParamNameFromComponentProperty($page, 'blogPost', 'slug');
+        $paramName = $this->getParamNameFromComponentProperty($page, 'cataloguePost', 'slug');
         if ($paramName) {
             $params[$paramName] = $this->slug;
         }

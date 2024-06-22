@@ -1,11 +1,11 @@
 <?php
 
-namespace Winter\Blog\Components;
+namespace Winter\Catalogue\Components;
 
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use Illuminate\Support\Collection;
-use Winter\Blog\Models\Category as BlogCategory;
+use Winter\Catalogue\Models\Category as CatalogueCategory;
 
 class Categories extends ComponentBase
 {
@@ -27,8 +27,8 @@ class Categories extends ComponentBase
     public function componentDetails(): array
     {
         return [
-            'name'        => 'winter.blog::lang.settings.category_title',
-            'description' => 'winter.blog::lang.settings.category_description'
+            'name'        => 'winter.catalogue::lang.settings.category_title',
+            'description' => 'winter.catalogue::lang.settings.category_description'
         ];
     }
 
@@ -36,23 +36,23 @@ class Categories extends ComponentBase
     {
         return [
             'slug' => [
-                'title'       => 'winter.blog::lang.settings.category_slug',
-                'description' => 'winter.blog::lang.settings.category_slug_description',
+                'title'       => 'winter.catalogue::lang.settings.category_slug',
+                'description' => 'winter.catalogue::lang.settings.category_slug_description',
                 'default'     => '{{ :slug }}',
                 'type'        => 'string',
             ],
             'displayEmpty' => [
-                'title'       => 'winter.blog::lang.settings.category_display_empty',
-                'description' => 'winter.blog::lang.settings.category_display_empty_description',
+                'title'       => 'winter.catalogue::lang.settings.category_display_empty',
+                'description' => 'winter.catalogue::lang.settings.category_display_empty_description',
                 'type'        => 'checkbox',
                 'default'     => 0,
             ],
             'categoryPage' => [
-                'title'       => 'winter.blog::lang.settings.category_page',
-                'description' => 'winter.blog::lang.settings.category_page_description',
+                'title'       => 'winter.catalogue::lang.settings.category_page',
+                'description' => 'winter.catalogue::lang.settings.category_page_description',
                 'type'        => 'dropdown',
-                'default'     => 'blog/category',
-                'group'       => 'winter.blog::lang.settings.group_links',
+                'default'     => 'catalogue/category',
+                'group'       => 'winter.catalogue::lang.settings.group_links',
             ],
         ];
     }
@@ -70,11 +70,11 @@ class Categories extends ComponentBase
     }
 
     /**
-     * Load all categories or, depending on the <displayEmpty> option, only those that have blog posts
+     * Load all categories or, depending on the <displayEmpty> option, only those that have catalogue posts
      */
     protected function loadCategories(): Collection
     {
-        $categories = BlogCategory::with('posts_count')->getNested();
+        $categories = CatalogueCategory::with('posts_count')->getNested();
         if (!$this->property('displayEmpty')) {
             $iterator = function ($categories) use (&$iterator) {
                 return $categories->reject(function ($category) use (&$iterator) {

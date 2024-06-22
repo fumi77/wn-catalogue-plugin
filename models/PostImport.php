@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Blog\Models;
+namespace Winter\Catalogue\Models;
 
 use ApplicationException;
 use Backend\Models\ImportModel;
@@ -12,7 +12,7 @@ use Exception;
  */
 class PostImport extends ImportModel
 {
-    public $table = 'winter_blog_posts';
+    public $table = 'smart_catalogue_posts';
 
     /**
      * Validation rules

@@ -5,7 +5,7 @@ return [
         'name' => 'ブログ',
         'description' => 'ロバストなブログプラットフォームです。'
     ],
-    'blog' => [
+    'catalogue' => [
         'menu_label' => 'ブログ',
         'menu_description' => 'ブログの投稿管理',
         'posts' => '投稿',

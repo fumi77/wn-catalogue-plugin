@@ -3,13 +3,13 @@
 # ===================================
 
 # Reorder Title
-title: winter.blog::lang.category.reorder
+title: winter.catalogue::lang.category.reorder
 
 # Attribute name
 nameFrom: name
 
 # Model Class name
-modelClass: Winter\Blog\Models\Category
+modelClass: Winter\Catalogue\Models\Category
 
 # Toolbar widget configuration
 toolbar:

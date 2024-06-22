@@ -1,4 +1,4 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Winter\Catalogue\Updates;
 
 use Db;
 use Schema;
@@ -15,8 +15,8 @@ class RenameIndexes extends Migration
     public function up()
     {
         foreach (self::TABLES as $table) {
-            $from = 'rainlab_blog_' . $table;
-            $to = 'winter_blog_' . $table;
+            $from = 'rainlab_catalogue_' . $table;
+            $to = 'smart_catalogue_' . $table;
 
             $this->updateIndexNames($from, $to, $to);
         }
@@ -25,8 +25,8 @@ class RenameIndexes extends Migration
     public function down()
     {
         foreach (self::TABLES as $table) {
-            $from = 'winter_blog_' . $table;
-            $to = 'rainlab_blog_' . $table;
+            $from = 'smart_catalogue_' . $table;
+            $to = 'rainlab_catalogue_' . $table;
 
             $this->updateIndexNames($from, $to, $from);
         }

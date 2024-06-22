@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Blog\Components;
+namespace Winter\Catalogue\Components;
 
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
@@ -8,8 +8,8 @@ use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Lang;
 use Response;
-use Winter\Blog\Models\Category as BlogCategory;
-use Winter\Blog\Models\Post as BlogPost;
+use Winter\Catalogue\Models\Category as CatalogueCategory;
+use Winter\Catalogue\Models\Post as CataloguePost;
 use Winter\Storm\Router\UrlGenerator;
 
 class RssFeed extends ComponentBase
@@ -22,12 +22,12 @@ class RssFeed extends ComponentBase
     /**
      * If the post list should be filtered by a category, the model to use.
      */
-    public ?BlogCategory $category;
+    public ?CatalogueCategory $category;
 
     /**
-     * Reference to the page name for the main blog page.
+     * Reference to the page name for the main catalogue page.
      */
-    public ?string $blogPage;
+    public ?string $cataloguePage;
 
     /**
      * Reference to the page name for linking to posts.
@@ -37,8 +37,8 @@ class RssFeed extends ComponentBase
     public function componentDetails(): array
     {
         return [
-            'name'        => 'winter.blog::lang.settings.rssfeed_title',
-            'description' => 'winter.blog::lang.settings.rssfeed_description'
+            'name'        => 'winter.catalogue::lang.settings.rssfeed_title',
+            'description' => 'winter.catalogue::lang.settings.rssfeed_description'
         ];
     }
 
@@ -46,42 +46,42 @@ class RssFeed extends ComponentBase
     {
         return [
             'categoryFilter' => [
-                'title'       => 'winter.blog::lang.settings.posts_filter',
-                'description' => 'winter.blog::lang.settings.posts_filter_description',
+                'title'       => 'winter.catalogue::lang.settings.posts_filter',
+                'description' => 'winter.catalogue::lang.settings.posts_filter_description',
                 'type'        => 'string',
                 'default'     => '',
             ],
             'sortOrder' => [
-                'title'       => 'winter.blog::lang.settings.posts_order',
-                'description' => 'winter.blog::lang.settings.posts_order_description',
+                'title'       => 'winter.catalogue::lang.settings.posts_order',
+                'description' => 'winter.catalogue::lang.settings.posts_order_description',
                 'type'        => 'dropdown',
                 'default'     => 'created_at desc',
             ],
             'postsPerPage' => [
-                'title'             => 'winter.blog::lang.settings.posts_per_page',
+                'title'             => 'winter.catalogue::lang.settings.posts_per_page',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'winter.blog::lang.settings.posts_per_page_validation',
+                'validationMessage' => 'winter.catalogue::lang.settings.posts_per_page_validation',
                 'default'           => '10',
             ],
-            'blogPage' => [
-                'title'       => 'winter.blog::lang.settings.rssfeed_blog',
-                'description' => 'winter.blog::lang.settings.rssfeed_blog_description',
+            'cataloguePage' => [
+                'title'       => 'winter.catalogue::lang.settings.rssfeed_catalogue',
+                'description' => 'winter.catalogue::lang.settings.rssfeed_catalogue_description',
                 'type'        => 'dropdown',
-                'default'     => 'blog/post',
-                'group'       => 'winter.blog::lang.settings.group_links',
+                'default'     => 'catalogue/post',
+                'group'       => 'winter.catalogue::lang.settings.group_links',
             ],
             'postPage' => [
-                'title'       => 'winter.blog::lang.settings.posts_post',
-                'description' => 'winter.blog::lang.settings.posts_post_description',
+                'title'       => 'winter.catalogue::lang.settings.posts_post',
+                'description' => 'winter.catalogue::lang.settings.posts_post_description',
                 'type'        => 'dropdown',
-                'default'     => 'blog/post',
-                'group'       => 'winter.blog::lang.settings.group_links',
+                'default'     => 'catalogue/post',
+                'group'       => 'winter.catalogue::lang.settings.group_links',
             ],
         ];
     }
 
-    public function getBlogPageOptions(): array
+    public function getCataloguePageOptions(): array
     {
         return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
     }
@@ -93,7 +93,7 @@ class RssFeed extends ComponentBase
 
     public function getSortOrderOptions(): array
     {
-        $options = BlogPost::$allowedSortingOptions;
+        $options = CataloguePost::$allowedSortingOptions;
 
         foreach ($options as $key => $value) {
             $options[$key] = Lang::get($value);
@@ -113,12 +113,12 @@ class RssFeed extends ComponentBase
 
     protected function prepareVars(): void
     {
-        $this->blogPage = $this->page['blogPage'] = $this->property('blogPage');
+        $this->cataloguePage = $this->page['cataloguePage'] = $this->property('cataloguePage');
         $this->postPage = $this->page['postPage'] = $this->property('postPage');
         $this->category = $this->page['category'] = $this->loadCategory();
         $this->posts = $this->page['posts'] = $this->listPosts();
 
-        $this->page['link'] = $this->pageUrl($this->blogPage);
+        $this->page['link'] = $this->pageUrl($this->cataloguePage);
         $this->page['rssLink'] = url()->full();
 
         $currentPage = $this->posts->currentPage();
@@ -152,7 +152,7 @@ class RssFeed extends ComponentBase
         /*
          * List all the posts, eager load their categories
          */
-        $posts = BlogPost::with('categories')->listFrontEnd([
+        $posts = CataloguePost::with('categories')->listFrontEnd([
             'sort'     => $this->property('sortOrder'),
             'perPage'  => $this->property('postsPerPage'),
             'category' => $category,
@@ -169,13 +169,13 @@ class RssFeed extends ComponentBase
         return $posts;
     }
 
-    protected function loadCategory(): ?BlogCategory
+    protected function loadCategory(): ?CatalogueCategory
     {
         if (!$categoryId = $this->property('categoryFilter')) {
             return null;
         }
 
-        if (!$category = BlogCategory::whereSlug($categoryId)->first()) {
+        if (!$category = CatalogueCategory::whereSlug($categoryId)->first()) {
             return null;
         }
 

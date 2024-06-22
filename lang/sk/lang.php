@@ -2,20 +2,20 @@
 
 return [
     'plugin' => [
-        'name' => 'Blog',
-        'description' => 'Robustná blogová platforma.'
+        'name' => 'Catalogue',
+        'description' => 'Robustná catalogueová platforma.'
     ],
-    'blog' => [
-        'menu_label' => 'Blog',
-        'menu_description' => 'Správa blogových príspevkov',
+    'catalogue' => [
+        'menu_label' => 'Catalogue',
+        'menu_description' => 'Správa catalogueových príspevkov',
         'posts' => 'Príspevky',
         'create_post' => 'Príspevok',
         'categories' => 'Kategórie',
         'create_category' => 'Kategórie príspevkov',
-        'tab' => 'Blog',
-        'access_posts' => 'Správa blogových príspevkov',
-        'access_categories' => 'Správa blogových kategórií',
-        'access_other_posts' => 'Správa blogových príspevkov ostatných užívateľov',
+        'tab' => 'Catalogue',
+        'access_posts' => 'Správa catalogueových príspevkov',
+        'access_categories' => 'Správa catalogueových kategórií',
+        'access_other_posts' => 'Správa catalogueových príspevkov ostatných užívateľov',
         'access_import_export' => 'Možnosť importu a exportu príspevkov',
         'access_publish' => 'Možnosť publikovať príspevky',
         'delete_confirm' => 'Ste si istý?',
@@ -24,7 +24,7 @@ return [
         'chart_total' => 'Celkom'
     ],
     'posts' => [
-        'list_title' => 'Správa blogových príspevkov',
+        'list_title' => 'Správa catalogueových príspevkov',
         'filter_category' => 'Kategória',
         'filter_published' => 'Publikované',
         'filter_date' => 'Dátum',
@@ -63,7 +63,7 @@ return [
         'return_to_posts' => 'Späť na zoznam príspevkov'
     ],
     'categories' => [
-        'list_title' => 'Správa blogových kategórií',
+        'list_title' => 'Správa catalogueových kategórií',
         'new_category' => 'Nová kategória',
         'uncategorized' => 'Nezaradené'
     ],
@@ -80,29 +80,29 @@ return [
         'reorder' => 'Zmeniť poradie kategórií'
     ],
     'menuitem' => [
-        'blog_category' => 'Blogová kategória',
-        'all_blog_categories' => 'Všetky blogové kategórie',
-        'blog_post' => 'Blogové príspevky',
-        'all_blog_posts' => 'Všetky blogové príspevky',
-        'category_blog_posts' => 'Blogové príspevky v kategórií'
+        'catalogue_category' => 'Catalogueová kategória',
+        'all_catalogue_categories' => 'Všetky catalogueové kategórie',
+        'catalogue_post' => 'Catalogueové príspevky',
+        'all_catalogue_posts' => 'Všetky catalogueové príspevky',
+        'category_catalogue_posts' => 'Catalogueové príspevky v kategórií'
     ],
     'settings' => [
         'category_title' => 'Zoznam kategórií',
-        'category_description' => 'Zobrazí zoznam blogových kategórií na stránke.',
+        'category_description' => 'Zobrazí zoznam catalogueových kategórií na stránke.',
         'category_slug' => 'URL kategórie',
-        'category_slug_description' => "Nájde blogovú kategóriu s týmto URL. Používa sa pre zobrazenie aktívnej kategórie.",
+        'category_slug_description' => "Nájde catalogueovú kategóriu s týmto URL. Používa sa pre zobrazenie aktívnej kategórie.",
         'category_display_empty' => 'Zobraziť prázdne kategórie',
         'category_display_empty_description' => 'Zobrazí kategórie, ktoré nemajú žiadne príspevky.',
         'category_page' => 'Stránka kategórie',
         'category_page_description' => 'Názov stránky kategórie kam budú smerovať odkazy na kategóriu. Táto hodnota je použitá v predvolenej čiastočnej stránke komponentu.',
         'post_title' => 'Príspevok',
-        'post_description' => 'Zobrazí blogový príspevok na stránke.',
+        'post_description' => 'Zobrazí catalogueový príspevok na stránke.',
         'post_slug' => 'URL príspevku',
-        'post_slug_description' => "Nájde blogový príspevok s týmto URL.",
+        'post_slug_description' => "Nájde catalogueový príspevok s týmto URL.",
         'post_category' => 'Stránka kategórie',
         'post_category_description' => 'Názov stránky kategórie kam budú smerovať odkazy na kategóriu. Táto hodnota je použitá v predvolenej čiastočnej stránke komponentu.',
         'posts_title' => 'Zoznam príspevkov',
-        'posts_description' => 'Zobrazí zoznam blogových príspevkov na stránke.',
+        'posts_description' => 'Zobrazí zoznam catalogueových príspevkov na stránke.',
         'posts_pagination' => 'číslo stránky',
         'posts_pagination_description' => 'Táto hodnota je použitá na určenie na akej stránke sa užívateľ nachádza.',
         'posts_filter' => 'Filter kategórií',
@@ -122,10 +122,10 @@ return [
         'posts_except_post_description' => 'Zadajte ID/URL alebo premennú s ID/URL príspevku, ktorý chcete vylúčiť',
         'posts_except_categories' => 'Okrem kategórií',
         'posts_except_categories_description' => 'Zadajte zoznam kategórií oddelený čiarkami alebo premennú s týmto zoznamom, ktoré chcete vylúčiť',
-        'rssfeed_blog' => 'Stránka blogu',
-        'rssfeed_blog_description' => 'Názov hlavnej stránky blogu na generovanie odkazov. Táto hodnota je použitá v predvolenej čiastočnej stránke komponentu.',
+        'rssfeed_catalogue' => 'Stránka catalogueu',
+        'rssfeed_catalogue_description' => 'Názov hlavnej stránky catalogueu na generovanie odkazov. Táto hodnota je použitá v predvolenej čiastočnej stránke komponentu.',
         'rssfeed_title' => 'RSS Kanál',
-        'rssfeed_description' => 'Vygeneruje RSS kanál, ktorý obsahuje blogové príspevky.',
+        'rssfeed_description' => 'Vygeneruje RSS kanál, ktorý obsahuje catalogueové príspevky.',
         'group_links' => 'Odkazy',
         'group_exceptions' => 'Výnimky'
     ],

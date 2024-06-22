@@ -1,4 +1,4 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Winter\Catalogue\Updates;
 
 use Winter\Storm\Database\Updates\Migration;
 use DbDongle;
@@ -9,8 +9,8 @@ class UpdateTimestampsNullable extends Migration
     {
         DbDongle::disableStrictMode();
 
-        DbDongle::convertTimestamps('rainlab_blog_posts');
-        DbDongle::convertTimestamps('rainlab_blog_categories');
+        DbDongle::convertTimestamps('smart_catalogue_posts');
+        DbDongle::convertTimestamps('smart_catalogue_categories');
     }
 
     public function down()

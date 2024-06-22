@@ -5,7 +5,7 @@ return [
         'name' => 'Блог',
         'description' => 'Стабилната блог платформа.'
     ],
-    'blog' => [
+    'catalogue' => [
         'menu_label' => 'Блог',
         'menu_description' => 'управление на публикациите',
         'posts' => 'публикации',
@@ -67,7 +67,7 @@ return [
         'category_title' => 'Списък с категории',
         'category_description' => 'Показва списък с категориите на блога.',
         'category_slug' => 'категория slug',
-        'category_slug_description' => "Look up the blog category using the supplied slug value. This property is used by the default component partial for marking the currently active category.",
+        'category_slug_description' => "Look up the catalogue category using the supplied slug value. This property is used by the default component partial for marking the currently active category.",
         'category_display_empty' => 'Показване на празни категории',
         'category_display_empty_description' => 'Показване на категории, които нямат никакви публикации.',
         'category_page' => 'Страница на категория',

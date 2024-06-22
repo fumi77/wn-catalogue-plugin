@@ -181,7 +181,7 @@
         if ($.oc === undefined)
             $.oc = $.wn
 
-        $.wn.blogPostForm = form
+        $.wn.cataloguePostForm = form
     })
 
 }(window.jQuery);

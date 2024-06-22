@@ -1,4 +1,4 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Winter\Catalogue\Updates;
 
 use Schema;
 use Winter\Storm\Database\Updates\Migration;
@@ -8,7 +8,7 @@ class CreatePostsTable extends Migration
 
     public function up()
     {
-        Schema::create('rainlab_blog_posts', function($table)
+        Schema::create('smart_catalogue_posts', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
@@ -26,7 +26,7 @@ class CreatePostsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('rainlab_blog_posts');
+        Schema::dropIfExists('smart_catalogue_posts');
     }
 
 }

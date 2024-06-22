@@ -2,15 +2,15 @@
 #  Form Behavior Config
 # ===================================
 
-name: winter.blog::lang.blog.create_category
-form: ~/plugins/winter/blog/models/category/fields.yaml
-modelClass: Winter\Blog\Models\Category
-defaultRedirect: winter/blog/categories
+name: winter.catalogue::lang.catalogue.create_category
+form: ~/plugins/smart/catalogue/models/category/fields.yaml
+modelClass: Winter\Catalogue\Models\Category
+defaultRedirect: winter/catalogue/categories
 
 create:
-    redirect: winter/blog/categories/update/:id
-    redirectClose: winter/blog/categories
+    redirect: winter/catalogue/categories/update/:id
+    redirectClose: winter/catalogue/categories
 
 update:
-    redirect: winter/blog/categories
-    redirectClose: winter/blog/categories
+    redirect: winter/catalogue/categories
+    redirectClose: winter/catalogue/categories

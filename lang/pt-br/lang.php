@@ -2,20 +2,20 @@
 
 return [
     'plugin' => [
-        'name' => 'Blog',
-        'description' => 'A plataforma de blogs robusta.'
+        'name' => 'Catalogue',
+        'description' => 'A plataforma de catalogues robusta.'
     ],
-    'blog' => [
-        'menu_label' => 'Blog',
-        'menu_description' => 'Gerencie os posts do blog',
+    'catalogue' => [
+        'menu_label' => 'Catalogue',
+        'menu_description' => 'Gerencie os posts do catalogue',
         'posts' => 'Posts',
-        'create_post' => 'Blog post',
+        'create_post' => 'Catalogue post',
         'categories' => 'Categorias',
-        'create_category' => 'Blog categoria',
-        'tab' => 'Blog',
-        'access_posts' => 'Gerencie os posts do blog',
-        'access_categories' => 'Gerenciar as categorias de blog',
-        'access_other_posts' => 'Gerencie outros posts de usuários do blog',
+        'create_category' => 'Catalogue categoria',
+        'tab' => 'Catalogue',
+        'access_posts' => 'Gerencie os posts do catalogue',
+        'access_categories' => 'Gerenciar as categorias de catalogue',
+        'access_other_posts' => 'Gerencie outros posts de usuários do catalogue',
         'access_import_export' => 'Permissão para importação e exportação de mensagens',
         'access_publish' => 'Permitido publicar posts',
         'delete_confirm' => 'Você tem certeza?',
@@ -24,7 +24,7 @@ return [
         'chart_total' => 'Total'
     ],
     'posts' => [
-        'list_title' => 'Gerencie os posts do blog',
+        'list_title' => 'Gerencie os posts do catalogue',
         'filter_category' => 'Categoria',
         'filter_published' => 'Esconder publicados',
         'filter_date' => 'Data',
@@ -50,7 +50,7 @@ return [
         'published_validation' => 'Por favor, especifique a data de publicação',
         'tab_edit' => 'Editar',
         'tab_categories' => 'Categorias',
-        'categories_comment' => 'Selecione as categorias do blog que o post pertence.',
+        'categories_comment' => 'Selecione as categorias do catalogue que o post pertence.',
         'categories_placeholder' => 'Não há categorias, você deve criar um primeiro!',
         'tab_manage' => 'Gerenciar',
         'published_on' => 'Publicado em',
@@ -62,7 +62,7 @@ return [
         'return_to_posts' => 'Voltar à lista de posts'
     ],
     'categories' => [
-        'list_title' => 'Gerenciar as categorias do blog',
+        'list_title' => 'Gerenciar as categorias do catalogue',
         'new_category' => 'Nova categoria',
         'uncategorized' => 'Sem categoria'
     ],
@@ -74,20 +74,20 @@ return [
         'slug_placeholder' => 'novo-slug-da-categoria',
         'posts' => 'Posts',
         'delete_confirm' => 'Você realmente quer apagar esta categoria?',
-        'return_to_categories' => 'Voltar para a lista de categorias do blog',
+        'return_to_categories' => 'Voltar para a lista de categorias do catalogue',
         'reorder' => 'Reordenar Categorias'
     ],
     'menuitem' => [
-        'blog_category' => 'Blog categoria',
-        'all_blog_categories' => 'Todas as categorias de blog',
-        'blog_post' => 'Blog post',
-        'all_blog_posts' => 'Todas as postagens do blog'
+        'catalogue_category' => 'Catalogue categoria',
+        'all_catalogue_categories' => 'Todas as categorias de catalogue',
+        'catalogue_post' => 'Catalogue post',
+        'all_catalogue_posts' => 'Todas as postagens do catalogue'
     ],
     'settings' => [
         'category_title' => 'Lista de categoria',
-        'category_description' => 'Exibe uma lista de categorias de blog na página.',
+        'category_description' => 'Exibe uma lista de categorias de catalogue na página.',
         'category_slug' => 'Slug da categoria',
-        'category_slug_description' => "Olhe para cima, a categoria do blog já está usando o valor fornecido! Esta propriedade é usada pelo componente default parcial para a marcação da categoria atualmente ativa.",
+        'category_slug_description' => "Olhe para cima, a categoria do catalogue já está usando o valor fornecido! Esta propriedade é usada pelo componente default parcial para a marcação da categoria atualmente ativa.",
         'category_display_empty' => 'xibir categorias vazias',
         'category_display_empty_description' => 'Mostrar categorias que não tem nenhum post.',
         'category_page' => 'Página da categoria',
@@ -95,7 +95,7 @@ return [
         'post_title' => 'Post',
         'post_description' => 'Exibe um post na página.',
         'post_slug' => 'Post slug',
-        'post_slug_description' => "Procure o post do blog usando o valor do slug fornecido.",
+        'post_slug_description' => "Procure o post do catalogue usando o valor do slug fornecido.",
         'post_category' => 'Página da categoria',
         'post_category_description' => 'Nome do arquivo de página da categoria para os links de categoria. Esta propriedade é usada pelo componente default parcial.',
         'posts_title' => 'Lista de posts',
@@ -116,9 +116,9 @@ return [
         'posts_post_description' => 'Nome do arquivo post página para os "Saiba mais" links. Esta propriedade é usada pelo componente default parcial.',
         'posts_except_post' => 'Except post',
         'posts_except_post_description' => 'Enter ID/URL or variable with post ID/URL you want to except',
-        'rssfeed_blog' => 'Página do Blog',
-        'rssfeed_blog_description' => 'Nome do arquivo principal da página do blog para geração de links. Essa propriedade é usada pelo componente padrão parcial.',
+        'rssfeed_catalogue' => 'Página do Catalogue',
+        'rssfeed_catalogue_description' => 'Nome do arquivo principal da página do catalogue para geração de links. Essa propriedade é usada pelo componente padrão parcial.',
         'rssfeed_title' => 'RSS Feed',
-        'rssfeed_description' => 'Gera um feed RSS que contém posts do blog.'
+        'rssfeed_description' => 'Gera um feed RSS que contém posts do catalogue.'
     ]
 ];

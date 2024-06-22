@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Blog\FormWidgets;
+namespace Winter\Catalogue\FormWidgets;
 
 use Backend\FormWidgets\MarkdownEditor;
 use Exception;
@@ -11,15 +11,15 @@ use System\Models\File;
 use SystemException;
 use ValidationException;
 use Validator;
-use Winter\Blog\Models\Post as PostModel;
+use Winter\Catalogue\Models\Post as PostModel;
 
 /**
  * Special markdown editor for the Create/Edit Post form.
  *
- * @package winter\blog
+ * @package winter\catalogue
  * @author Alexey Bobkov, Samuel Georges
  */
-class BlogMarkdown extends MarkdownEditor
+class CatalogueMarkdown extends MarkdownEditor
 {
     /**
      * {@inheritDoc}
@@ -67,7 +67,7 @@ class BlogMarkdown extends MarkdownEditor
     }
 
     /**
-     * Handle images being uploaded to the blog post
+     * Handle images being uploaded to the catalogue post
      *
      * @return void
      */

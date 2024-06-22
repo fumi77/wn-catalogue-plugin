@@ -1,19 +1,19 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Winter\Catalogue\Updates;
 
 use Schema;
 use Winter\Storm\Database\Updates\Migration;
-use Winter\Blog\Models\Category as CategoryModel;
+use Winter\Catalogue\Models\Category as CategoryModel;
 
 class PostsAddMetadata extends Migration
 {
 
     public function up()
     {
-        if (Schema::hasColumn('rainlab_blog_posts', 'metadata')) {
+        if (Schema::hasColumn('smart_catalogue_posts', 'metadata')) {
             return;
         }
 
-        Schema::table('rainlab_blog_posts', function($table)
+        Schema::table('smart_catalogue_posts', function($table)
         {
             $table->mediumText('metadata')->nullable();
         });
@@ -21,8 +21,8 @@ class PostsAddMetadata extends Migration
 
     public function down()
     {
-        if (Schema::hasColumn('rainlab_blog_posts', 'metadata')) {
-            Schema::table('rainlab_blog_posts', function ($table) {
+        if (Schema::hasColumn('smart_catalogue_posts', 'metadata')) {
+            Schema::table('smart_catalogue_posts', function ($table) {
                 $table->dropColumn('metadata');
             });
         }

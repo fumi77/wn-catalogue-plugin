@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Blog\Traits;
+namespace Winter\Catalogue\Traits;
 
 use App;
 use Cms\Classes\Controller;

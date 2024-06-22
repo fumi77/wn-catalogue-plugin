@@ -5,7 +5,7 @@ return [
         'name' => 'Блог',
         'description' => 'Надежная блоговая-платформа.'
     ],
-    'blog' => [
+    'catalogue' => [
         'menu_label' => 'Блог',
         'menu_description' => 'Управление Блогом',
         'posts' => 'Записи',
@@ -85,11 +85,11 @@ return [
         'reorder' => 'Порядок категорий'
     ],
     'menuitem' => [
-        'blog_category' => 'Категория блога',
-        'all_blog_categories' => 'Все категории блога',
-        'blog_post' => 'Запись блога',
-        'all_blog_posts' => 'Все записи блога',
-        'category_blog_posts' => 'Записи категории блога'
+        'catalogue_category' => 'Категория блога',
+        'all_catalogue_categories' => 'Все категории блога',
+        'catalogue_post' => 'Запись блога',
+        'all_catalogue_posts' => 'Все записи блога',
+        'category_catalogue_posts' => 'Записи категории блога'
     ],
     'settings' => [
         'category_title' => 'Список категорий блога',
@@ -127,8 +127,8 @@ return [
         'posts_except_post_description' => 'Введите ID/URL или переменную с ID/URL записи, которую вы хотите исключить',
         'posts_except_categories' => 'Кроме категорий',
         'posts_except_categories_description' => 'Введите разделенный запятыми список URL категорий или переменную со списком категорий, которые вы хотите исключить',
-        'rssfeed_blog' => 'Страница блога',
-        'rssfeed_blog_description' => 'Имя основного файла страницы блога для генерации ссылок. Это свойство используется по умолчанию компонентом Фрагменты.',
+        'rssfeed_catalogue' => 'Страница блога',
+        'rssfeed_catalogue_description' => 'Имя основного файла страницы блога для генерации ссылок. Это свойство используется по умолчанию компонентом Фрагменты.',
         'rssfeed_title' => 'RSS Feed',
         'rssfeed_description' => 'Создает RSS-канал, содержащий записи из блога.',
         'group_links' => 'Ссылки',

@@ -5,7 +5,7 @@ return [
         'name' => 'وبلاگ',
         'description' => 'پلتفرم قوی برای وبلاگ نویسی'
     ],
-    'blog' => [
+    'catalogue' => [
         'menu_label' => 'وبلاگ',
         'menu_description' => 'مدیریت پست های ارسالی',
         'posts' => 'پست ها',

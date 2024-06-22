@@ -1,8 +1,8 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Winter\Catalogue\Updates;
 
 use Carbon\Carbon;
-use Winter\Blog\Models\Post;
-use Winter\Blog\Models\Category;
+use Winter\Catalogue\Models\Post;
+use Winter\Catalogue\Models\Category;
 use Winter\Storm\Database\Updates\Seeder;
 
 class SeedAllTables extends Seeder
@@ -11,39 +11,39 @@ class SeedAllTables extends Seeder
     public function run()
     {
         Post::extend(function ($model) {
-            $model->setTable('rainlab_blog_posts');
+            $model->setTable('smart_catalogue_posts');
         });
 
         Post::create([
-            'title' => 'First blog post',
-            'slug' => 'first-blog-post',
+            'title' => 'First catalogue post',
+            'slug' => 'first-catalogue-post',
             'content' => '
-This is your first ever **blog post**! It might be a good idea to update this post with some more relevant content.
+This is your first ever **catalogue post**! It might be a good idea to update this post with some more relevant content.
 
-You can edit this content by selecting **Blog** from the administration back-end menu.
+You can edit this content by selecting **Catalogue** from the administration back-end menu.
 
 *Enjoy the good times!*
             ',
-            'excerpt' => 'The first ever blog post is here. It might be a good idea to update this post with some more relevant content.',
+            'excerpt' => 'The first ever catalogue post is here. It might be a good idea to update this post with some more relevant content.',
             'published_at' => Carbon::now(),
             'published' => true
         ]);
 
         Category::extend(function ($model) {
-            $model->setTable('rainlab_blog_categories');
+            $model->setTable('smart_catalogue_categories');
         });
 
         Category::create([
-            'name' => trans('winter.blog::lang.categories.uncategorized'),
+            'name' => trans('winter.catalogue::lang.categories.uncategorized'),
             'slug' => 'uncategorized',
         ]);
 
         Post::extend(function ($model) {
-            $model->setTable('winter_blog_posts');
+            $model->setTable('smart_catalogue_posts');
         });
 
         Category::extend(function ($model) {
-            $model->setTable('winter_blog_categories');
+            $model->setTable('smart_catalogue_categories');
         });
     }
 }

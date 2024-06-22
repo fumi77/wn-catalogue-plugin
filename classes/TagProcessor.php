@@ -1,11 +1,11 @@
 <?php
 
-namespace Winter\Blog\Classes;
+namespace Winter\Catalogue\Classes;
 
 /**
- * Blog Markdown tag processor.
+ * Catalogue Markdown tag processor.
  *
- * @package winter\blog
+ * @package winter\catalogue
  * @author Alexey Bobkov, Samuel Georges
  */
 class TagProcessor
@@ -18,10 +18,10 @@ class TagProcessor
     private $callbacks = [];
 
     /**
-     * Registers a callback function that handles blog post markup.
+     * Registers a callback function that handles catalogue post markup.
      * The callback function should accept two arguments - the HTML string
      * generated from Markdown contents and the preview flag determining whether
-     * the function should return a markup for the blog post preview form or for the
+     * the function should return a markup for the catalogue post preview form or for the
      * front-end.
      * @param callable $callback A callable function.
      */

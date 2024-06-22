@@ -1,10 +1,10 @@
-<?php namespace Winter\Blog\Controllers;
+<?php namespace Winter\Catalogue\Controllers;
 
 use BackendMenu;
 use Flash;
 use Lang;
 use Backend\Classes\Controller;
-use Winter\Blog\Models\Category;
+use Winter\Catalogue\Models\Category;
 
 class Categories extends Controller
 {
@@ -14,13 +14,13 @@ class Categories extends Controller
         \Backend\Behaviors\ReorderController::class
     ];
 
-    public $requiredPermissions = ['winter.blog.access_categories'];
+    public $requiredPermissions = ['winter.catalogue.access_categories'];
 
     public function __construct()
     {
         parent::__construct();
 
-        BackendMenu::setContext('Winter.Blog', 'blog', 'categories');
+        BackendMenu::setContext('Smart.Catalogue', 'catalogue', 'categories');
     }
 
     public function index_onDelete()
@@ -34,7 +34,7 @@ class Categories extends Controller
                 $category->delete();
             }
 
-            Flash::success(Lang::get('winter.blog::lang.category.delete_success'));
+            Flash::success(Lang::get('winter.catalogue::lang.category.delete_success'));
         }
 
         return $this->listRefresh();

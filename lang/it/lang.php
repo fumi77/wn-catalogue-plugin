@@ -2,17 +2,17 @@
 
 return [
     'plugin' => [
-        'name' => 'Blog',
-        'description' => 'Una solida piattaforma di blogging.'
+        'name' => 'Catalogue',
+        'description' => 'Una solida piattaforma di catalogueging.'
     ],
-    'blog' => [
-        'menu_label' => 'Blog',
+    'catalogue' => [
+        'menu_label' => 'Catalogue',
         'menu_description' => 'Gestisci i post',
         'posts' => 'Post',
-        'create_post' => 'post del blog',
+        'create_post' => 'post del catalogue',
         'categories' => 'Categorie',
-        'create_category' => 'categorie del blog',
-        'tab' => 'Blog',
+        'create_category' => 'categorie del catalogue',
+        'tab' => 'Catalogue',
         'access_posts' => 'Gestisci i post',
         'access_categories' => 'Gestisci le categorie',
         'access_other_posts' => 'Gestisci i post di altri utenti',
@@ -58,7 +58,7 @@ return [
         'return_to_posts' => 'Ritorna all\'elenco dei post'
     ],
     'categories' => [
-        'list_title' => 'Gestisci le categorie del blog',
+        'list_title' => 'Gestisci le categorie del catalogue',
         'new_category' => 'Nuova categoria',
         'uncategorized' => 'Non categorizzato'
     ],
@@ -69,14 +69,14 @@ return [
         'slug_placeholder' => 'slug-nuova-categoria',
         'posts' => 'Post',
         'delete_confirm' => 'Vuoi veramente cancellare questa categoria?',
-        'return_to_categories' => 'Ritorna all\'elenco delle categorie del blog',
+        'return_to_categories' => 'Ritorna all\'elenco delle categorie del catalogue',
         'reorder' => 'Riordino Categorie'
     ],
     'settings' => [
         'category_title' => 'Elenco Categorie',
-        'category_description' => 'Mostra un\'elenco delle categorie del blog sulla pagina.',
+        'category_description' => 'Mostra un\'elenco delle categorie del catalogue sulla pagina.',
         'category_slug' => 'Slug categoria',
-        'category_slug_description' => "Cerca la categoria del blog usando lo slug fornito. Questa proprietà è usata dal componente parziale di default per segnare la categoria attualmente usata.",
+        'category_slug_description' => "Cerca la categoria del catalogue usando lo slug fornito. Questa proprietà è usata dal componente parziale di default per segnare la categoria attualmente usata.",
         'category_display_empty' => 'Mostra categorie vuote',
         'category_display_empty_description' => 'Mostra categorie che non hanno alcun post.',
         'category_page' => 'Pagina delle categorie',

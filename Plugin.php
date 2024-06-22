@@ -1,14 +1,14 @@
 <?php
 
-namespace Winter\Blog;
+namespace Winter\Catalogue;
 
 use Backend;
 use Backend\Models\UserRole;
 use Event;
 use System\Classes\PluginBase;
-use Winter\Blog\Classes\TagProcessor;
-use Winter\Blog\Models\Category;
-use Winter\Blog\Models\Post;
+use Winter\Catalogue\Classes\TagProcessor;
+use Winter\Catalogue\Models\Category;
+use Winter\Catalogue\Models\Post;
 
 class Plugin extends PluginBase
 {
@@ -18,12 +18,12 @@ class Plugin extends PluginBase
     public function pluginDetails(): array
     {
         return [
-            'name'        => 'winter.blog::lang.plugin.name',
-            'description' => 'winter.blog::lang.plugin.description',
+            'name'        => 'winter.catalogue::lang.plugin.name',
+            'description' => 'winter.catalogue::lang.plugin.description',
             'author'      => 'Winter CMS',
             'icon'        => 'icon-pencil',
-            'homepage'    => 'https://github.com/wintercms/wn-blog-plugin',
-            'replaces'    => ['RainLab.Blog' => '<= 1.7.0'],
+            'homepage'    => 'https://github.com/wintercms/wn-catalogue-plugin',
+            'replaces'    => ['Smart.Catalogue' => '<= 1.7.0'],
         ];
     }
 
@@ -33,10 +33,10 @@ class Plugin extends PluginBase
     public function registerComponents(): array
     {
         return [
-            \Winter\Blog\Components\Post::class       => 'blogPost',
-            \Winter\Blog\Components\Posts::class      => 'blogPosts',
-            \Winter\Blog\Components\Categories::class => 'blogCategories',
-            \Winter\Blog\Components\RssFeed::class    => 'blogRssFeed'
+            \Winter\Catalogue\Components\Post::class       => 'cataloguePost',
+            \Winter\Catalogue\Components\Posts::class      => 'cataloguePosts',
+            \Winter\Catalogue\Components\Categories::class => 'catalogueCategories',
+            \Winter\Catalogue\Components\RssFeed::class    => 'catalogueRssFeed'
         ];
     }
 
@@ -46,34 +46,34 @@ class Plugin extends PluginBase
     public function registerPermissions(): array
     {
         return [
-            'winter.blog.manage_settings' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.manage_settings',
+            'winter.catalogue.manage_settings' => [
+                'tab'   => 'winter.catalogue::lang.catalogue.tab',
+                'label' => 'winter.catalogue::lang.catalogue.manage_settings',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
-            'winter.blog.access_posts' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.access_posts',
+            'winter.catalogue.access_posts' => [
+                'tab'   => 'winter.catalogue::lang.catalogue.tab',
+                'label' => 'winter.catalogue::lang.catalogue.access_posts',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
-            'winter.blog.access_categories' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.access_categories',
+            'winter.catalogue.access_categories' => [
+                'tab'   => 'winter.catalogue::lang.catalogue.tab',
+                'label' => 'winter.catalogue::lang.catalogue.access_categories',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
-            'winter.blog.access_other_posts' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.access_other_posts',
+            'winter.catalogue.access_other_posts' => [
+                'tab'   => 'winter.catalogue::lang.catalogue.tab',
+                'label' => 'winter.catalogue::lang.catalogue.access_other_posts',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
-            'winter.blog.access_import_export' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.access_import_export',
+            'winter.catalogue.access_import_export' => [
+                'tab'   => 'winter.catalogue::lang.catalogue.tab',
+                'label' => 'winter.catalogue::lang.catalogue.access_import_export',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
-            'winter.blog.access_publish' => [
-                'tab'   => 'winter.blog::lang.blog.tab',
-                'label' => 'winter.blog::lang.blog.access_publish',
+            'winter.catalogue.access_publish' => [
+                'tab'   => 'winter.catalogue::lang.catalogue.tab',
+                'label' => 'winter.catalogue::lang.catalogue.access_publish',
                 'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ]
         ];
@@ -85,32 +85,32 @@ class Plugin extends PluginBase
     public function registerNavigation(): array
     {
         return [
-            'blog' => [
-                'label'       => 'winter.blog::lang.blog.menu_label',
-                'url'         => Backend::url('winter/blog/posts'),
+            'catalogue' => [
+                'label'       => 'winter.catalogue::lang.catalogue.menu_label',
+                'url'         => Backend::url('winter/catalogue/posts'),
                 'icon'        => 'icon-pencil',
-                'iconSvg'     => 'plugins/winter/blog/assets/images/blog-icon.svg',
-                'permissions' => ['winter.blog.*'],
+                'iconSvg'     => 'plugins/winter/catalogue/assets/images/catalogue-icon.svg',
+                'permissions' => ['winter.catalogue.*'],
                 'order'       => 300,
 
                 'sideMenu' => [
                     'new_post' => [
-                        'label'       => 'winter.blog::lang.posts.new_post',
+                        'label'       => 'winter.catalogue::lang.posts.new_post',
                         'icon'        => 'icon-plus',
-                        'url'         => Backend::url('winter/blog/posts/create'),
-                        'permissions' => ['winter.blog.access_posts']
+                        'url'         => Backend::url('winter/catalogue/posts/create'),
+                        'permissions' => ['winter.catalogue.access_posts']
                     ],
                     'posts' => [
-                        'label'       => 'winter.blog::lang.blog.posts',
+                        'label'       => 'winter.catalogue::lang.catalogue.posts',
                         'icon'        => 'icon-copy',
-                        'url'         => Backend::url('winter/blog/posts'),
-                        'permissions' => ['winter.blog.access_posts']
+                        'url'         => Backend::url('winter/catalogue/posts'),
+                        'permissions' => ['winter.catalogue.access_posts']
                     ],
                     'categories' => [
-                        'label'       => 'winter.blog::lang.blog.categories',
+                        'label'       => 'winter.catalogue::lang.catalogue.categories',
                         'icon'        => 'icon-list-ul',
-                        'url'         => Backend::url('winter/blog/categories'),
-                        'permissions' => ['winter.blog.access_categories']
+                        'url'         => Backend::url('winter/catalogue/categories'),
+                        'permissions' => ['winter.catalogue.access_categories']
                     ]
                 ]
             ]
@@ -123,15 +123,15 @@ class Plugin extends PluginBase
     public function registerSettings(): array
     {
         return [
-            'blog' => [
-                'label' => 'winter.blog::lang.blog.menu_label',
-                'description' => 'winter.blog::lang.blog.settings_description',
-                'category' => 'winter.blog::lang.blog.menu_label',
+            'catalogue' => [
+                'label' => 'winter.catalogue::lang.catalogue.menu_label',
+                'description' => 'winter.catalogue::lang.catalogue.settings_description',
+                'category' => 'winter.catalogue::lang.catalogue.menu_label',
                 'icon' => 'icon-pencil',
-                'class' => 'Winter\Blog\Models\Settings',
+                'class' => 'Winter\Catalogue\Models\Settings',
                 'order' => 500,
-                'keywords' => 'blog post category',
-                'permissions' => ['winter.blog.manage_settings']
+                'keywords' => 'catalogue post category',
+                'permissions' => ['winter.catalogue.manage_settings']
             ]
         ];
     }
@@ -178,34 +178,34 @@ class Plugin extends PluginBase
          */
         Event::listen('pages.menuitem.listTypes', function () {
             return [
-                'blog-category'       => 'winter.blog::lang.menuitem.blog_category',
-                'all-blog-categories' => 'winter.blog::lang.menuitem.all_blog_categories',
-                'blog-post'           => 'winter.blog::lang.menuitem.blog_post',
-                'all-blog-posts'      => 'winter.blog::lang.menuitem.all_blog_posts',
-                'category-blog-posts' => 'winter.blog::lang.menuitem.category_blog_posts',
+                'catalogue-category'       => 'winter.catalogue::lang.menuitem.catalogue_category',
+                'all-catalogue-categories' => 'winter.catalogue::lang.menuitem.all_catalogue_categories',
+                'catalogue-post'           => 'winter.catalogue::lang.menuitem.catalogue_post',
+                'all-catalogue-posts'      => 'winter.catalogue::lang.menuitem.all_catalogue_posts',
+                'category-catalogue-posts' => 'winter.catalogue::lang.menuitem.category_catalogue_posts',
             ];
         });
 
         Event::listen('pages.menuitem.getTypeInfo', function ($type) {
             switch ($type) {
-                case 'blog-category':
-                case 'all-blog-categories':
+                case 'catalogue-category':
+                case 'all-catalogue-categories':
                     return Category::getMenuTypeInfo($type);
-                case 'blog-post':
-                case 'all-blog-posts':
-                case 'category-blog-posts':
+                case 'catalogue-post':
+                case 'all-catalogue-posts':
+                case 'category-catalogue-posts':
                     return Post::getMenuTypeInfo($type);
             }
         });
 
         Event::listen('pages.menuitem.resolveItem', function ($type, $item, $url, $theme) {
             switch ($type) {
-                case 'blog-category':
-                case 'all-blog-categories':
+                case 'catalogue-category':
+                case 'all-catalogue-categories':
                     return Category::resolveMenuItem($item, $url, $theme);
-                case 'blog-post':
-                case 'all-blog-posts':
-                case 'category-blog-posts':
+                case 'catalogue-post':
+                case 'all-catalogue-posts':
+                case 'category-catalogue-posts':
                     return Post::resolveMenuItem($item, $url, $theme);
             }
         });

@@ -1,18 +1,18 @@
 <?php
 
-namespace Winter\Blog\FormWidgets;
+namespace Winter\Catalogue\FormWidgets;
 
-use Winter\Blog\Models\Post;
+use Winter\Catalogue\Models\Post;
 use Winter\Translate\Models\Locale;
 
 /**
- * A multi-lingual version of the blog markdown editor.
+ * A multi-lingual version of the catalogue markdown editor.
  * This class should never be invoked without the Winter.Translate plugin.
  *
- * @package winter\blog
+ * @package winter\catalogue
  * @author Alexey Bobkov, Samuel Georges
  */
-class MLBlogMarkdown extends BlogMarkdown
+class MLCatalogueMarkdown extends CatalogueMarkdown
 {
     use \Winter\Translate\Traits\MLControl;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Blog\Components;
+namespace Winter\Catalogue\Components;
 
 use BackendAuth;
 use Cms\Classes\ComponentBase;
@@ -8,9 +8,9 @@ use Cms\Classes\Page;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Lang;
 use Redirect;
-use Winter\Blog\Models\Category as BlogCategory;
-use Winter\Blog\Models\Post as BlogPost;
-use Winter\Blog\Models\Settings as BlogSettings;
+use Winter\Catalogue\Models\Category as CatalogueCategory;
+use Winter\Catalogue\Models\Post as CataloguePost;
+use Winter\Catalogue\Models\Settings as CatalogueSettings;
 use Winter\Storm\Database\Collection;
 use Winter\Storm\Database\Model;
 
@@ -29,7 +29,7 @@ class Posts extends ComponentBase
     /**
      * If the post list should be filtered by a category, the model to use
      */
-    public ?BlogCategory $category;
+    public ?CatalogueCategory $category;
 
     /**
      * Message to display when there are no messages
@@ -54,8 +54,8 @@ class Posts extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'winter.blog::lang.settings.posts_title',
-            'description' => 'winter.blog::lang.settings.posts_description'
+            'name'        => 'winter.catalogue::lang.settings.posts_title',
+            'description' => 'winter.catalogue::lang.settings.posts_description'
         ];
     }
 
@@ -63,68 +63,68 @@ class Posts extends ComponentBase
     {
         return [
             'pageNumber' => [
-                'title'       => 'winter.blog::lang.settings.posts_pagination',
-                'description' => 'winter.blog::lang.settings.posts_pagination_description',
+                'title'       => 'winter.catalogue::lang.settings.posts_pagination',
+                'description' => 'winter.catalogue::lang.settings.posts_pagination_description',
                 'type'        => 'string',
                 'default'     => '{{ :page }}',
             ],
             'categoryFilter' => [
-                'title'       => 'winter.blog::lang.settings.posts_filter',
-                'description' => 'winter.blog::lang.settings.posts_filter_description',
+                'title'       => 'winter.catalogue::lang.settings.posts_filter',
+                'description' => 'winter.catalogue::lang.settings.posts_filter_description',
                 'type'        => 'string',
                 'default'     => '',
             ],
             'postsPerPage' => [
-                'title'             => 'winter.blog::lang.settings.posts_per_page',
+                'title'             => 'winter.catalogue::lang.settings.posts_per_page',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'winter.blog::lang.settings.posts_per_page_validation',
+                'validationMessage' => 'winter.catalogue::lang.settings.posts_per_page_validation',
                 'default'           => '10',
             ],
             'noPostsMessage' => [
-                'title'             => 'winter.blog::lang.settings.posts_no_posts',
-                'description'       => 'winter.blog::lang.settings.posts_no_posts_description',
+                'title'             => 'winter.catalogue::lang.settings.posts_no_posts',
+                'description'       => 'winter.catalogue::lang.settings.posts_no_posts_description',
                 'type'              => 'string',
-                'default'           => Lang::get('winter.blog::lang.settings.posts_no_posts_default'),
+                'default'           => Lang::get('winter.catalogue::lang.settings.posts_no_posts_default'),
                 'showExternalParam' => false,
             ],
             'sortOrder' => [
-                'title'       => 'winter.blog::lang.settings.posts_order',
-                'description' => 'winter.blog::lang.settings.posts_order_description',
+                'title'       => 'winter.catalogue::lang.settings.posts_order',
+                'description' => 'winter.catalogue::lang.settings.posts_order_description',
                 'type'        => 'dropdown',
                 'default'     => 'published_at desc',
             ],
             'categoryPage' => [
-                'title'       => 'winter.blog::lang.settings.posts_category',
-                'description' => 'winter.blog::lang.settings.posts_category_description',
+                'title'       => 'winter.catalogue::lang.settings.posts_category',
+                'description' => 'winter.catalogue::lang.settings.posts_category_description',
                 'type'        => 'dropdown',
-                'default'     => 'blog/category',
-                'group'       => 'winter.blog::lang.settings.group_links',
+                'default'     => 'catalogue/category',
+                'group'       => 'winter.catalogue::lang.settings.group_links',
             ],
             'postPage' => [
-                'title'       => 'winter.blog::lang.settings.posts_post',
-                'description' => 'winter.blog::lang.settings.posts_post_description',
+                'title'       => 'winter.catalogue::lang.settings.posts_post',
+                'description' => 'winter.catalogue::lang.settings.posts_post_description',
                 'type'        => 'dropdown',
-                'default'     => 'blog/post',
-                'group'       => 'winter.blog::lang.settings.group_links',
+                'default'     => 'catalogue/post',
+                'group'       => 'winter.catalogue::lang.settings.group_links',
             ],
             'exceptPost' => [
-                'title'             => 'winter.blog::lang.settings.posts_except_post',
-                'description'       => 'winter.blog::lang.settings.posts_except_post_description',
+                'title'             => 'winter.catalogue::lang.settings.posts_except_post',
+                'description'       => 'winter.catalogue::lang.settings.posts_except_post_description',
                 'type'              => 'string',
                 'validationPattern' => '^[a-z0-9\-_,\s]+$',
-                'validationMessage' => 'winter.blog::lang.settings.posts_except_post_validation',
+                'validationMessage' => 'winter.catalogue::lang.settings.posts_except_post_validation',
                 'default'           => '',
-                'group'             => 'winter.blog::lang.settings.group_exceptions',
+                'group'             => 'winter.catalogue::lang.settings.group_exceptions',
             ],
             'exceptCategories' => [
-                'title'             => 'winter.blog::lang.settings.posts_except_categories',
-                'description'       => 'winter.blog::lang.settings.posts_except_categories_description',
+                'title'             => 'winter.catalogue::lang.settings.posts_except_categories',
+                'description'       => 'winter.catalogue::lang.settings.posts_except_categories_description',
                 'type'              => 'string',
                 'validationPattern' => '^[a-z0-9\-_,\s]+$',
-                'validationMessage' => 'winter.blog::lang.settings.posts_except_categories_validation',
+                'validationMessage' => 'winter.catalogue::lang.settings.posts_except_categories_validation',
                 'default'           => '',
-                'group'             => 'winter.blog::lang.settings.group_exceptions',
+                'group'             => 'winter.catalogue::lang.settings.group_exceptions',
             ],
         ];
     }
@@ -141,7 +141,7 @@ class Posts extends ComponentBase
 
     public function getSortOrderOptions()
     {
-        $options = BlogPost::$allowedSortingOptions;
+        $options = CataloguePost::$allowedSortingOptions;
 
         foreach ($options as $key => $value) {
             $options[$key] = Lang::get($value);
@@ -195,7 +195,7 @@ class Posts extends ComponentBase
          */
         $isPublished = !$this->checkEditor();
 
-        $posts = BlogPost::with(['categories', 'featured_images'])->listFrontEnd([
+        $posts = CataloguePost::with(['categories', 'featured_images'])->listFrontEnd([
             'page'             => $this->property('pageNumber'),
             'sort'             => $this->property('sortOrder'),
             'perPage'          => $this->property('postsPerPage'),
@@ -230,7 +230,7 @@ class Posts extends ComponentBase
             return null;
         }
 
-        $category = new BlogCategory;
+        $category = new CatalogueCategory;
 
         $category = $category->isClassExtendedWith('Winter.Translate.Behaviors.TranslatableModel')
             ? $category->transWhere('slug', $slug)
@@ -245,6 +245,6 @@ class Posts extends ComponentBase
     {
         $backendUser = BackendAuth::getUser();
 
-        return $backendUser && $backendUser->hasAccess('winter.blog.access_posts') && BlogSettings::get('show_all_posts', true);
+        return $backendUser && $backendUser->hasAccess('winter.catalogue.access_posts') && CatalogueSettings::get('show_all_posts', true);
     }
 }

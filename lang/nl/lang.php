@@ -2,20 +2,20 @@
 
 return [
     'plugin' => [
-        'name' => 'Blog',
-        'description' => 'A robust blogging platform.'
+        'name' => 'Catalogue',
+        'description' => 'A robust catalogueging platform.'
     ],
-    'blog' => [
-        'menu_label' => 'Blog',
-        'menu_description' => 'Beheer blog artikelen',
+    'catalogue' => [
+        'menu_label' => 'Catalogue',
+        'menu_description' => 'Beheer catalogue artikelen',
         'posts' => 'Artikelen',
         'create_post' => 'Artikel',
         'categories' => 'Categorieën',
-        'create_category' => 'blog categorie',
-        'tab' => 'Blog',
-        'access_posts' => 'Blog artikelen beheren',
-        'access_categories' => 'Blog categorieën beheren',
-        'access_other_posts' => 'Beheren van blog artikelen van gebruikers',
+        'create_category' => 'catalogue categorie',
+        'tab' => 'Catalogue',
+        'access_posts' => 'Catalogue artikelen beheren',
+        'access_categories' => 'Catalogue categorieën beheren',
+        'access_other_posts' => 'Beheren van catalogue artikelen van gebruikers',
         'access_import_export' => 'Toegang tot importeren en exporteren van artikelen',
         'delete_confirm' => 'Weet je het zeker?',
         'chart_published' => 'Gepubliceerd',
@@ -23,7 +23,7 @@ return [
         'chart_total' => 'Totaal'
     ],
     'posts' => [
-        'list_title' => 'Beheren van blog artikelen',
+        'list_title' => 'Beheren van catalogue artikelen',
         'filter_category' => 'Categorie',
         'filter_published' => 'Verberg gepubliceerd',
         'new_post' => 'Nieuw artikel'
@@ -63,7 +63,7 @@ return [
         'date_format' => 'd, M, Y',
     ],
     'categories' => [
-        'list_title' => 'Beheer blog categorieën',
+        'list_title' => 'Beheer catalogue categorieën',
         'new_category' => 'Nieuwe categorie',
         'uncategorized' => 'Ongecategoriseerd'
     ],
@@ -80,7 +80,7 @@ return [
         'category_title' => 'Categorie overzicht',
         'category_description' => 'Geeft een lijst weer van alle categorieën op de pagina.',
         'category_slug' => 'Categorie slug',
-        'category_slug_description' => 'Haal blog categorie op a.h.v. de opgegeven slug. Deze waarde wordt standaard gebruikt voor de partial om de actieve categorie te markeren.',
+        'category_slug_description' => 'Haal catalogue categorie op a.h.v. de opgegeven slug. Deze waarde wordt standaard gebruikt voor de partial om de actieve categorie te markeren.',
         'category_display_empty' => 'Geef lege categorieën weer',
         'category_display_empty_description' => 'Geef categorieën weer die geen artikelen hebben.',
         'category_page' => 'Categorie pagina',
@@ -106,7 +106,7 @@ return [
         'posts_category' => 'Categorie pagina',
         'posts_category_description' => 'Naam van categorie pagina bestand voor gekoppeld artikel overzichts pagina. Deze waarde wordt standaard gebruikt door de partial.',
         'posts_post' => 'Artikel pagina',
-        'posts_post_description' => 'Naam van blog pagina bestand voor de "Lees meer" links. Deze waarde wordt standaard gebruikt door de partial.',
+        'posts_post_description' => 'Naam van catalogue pagina bestand voor de "Lees meer" links. Deze waarde wordt standaard gebruikt door de partial.',
         'posts_except_post' => 'Except post',
         'posts_except_post_description' => 'Enter ID/URL or variable with post ID/URL you want to except',
     ]

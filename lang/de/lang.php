@@ -2,21 +2,21 @@
 
 return [
     'plugin' => [
-        'name' => 'Blog',
-        'description' => 'Eine robuste Blog Plattform.'
+        'name' => 'Catalogue',
+        'description' => 'Eine robuste Catalogue Plattform.'
     ],
-    'blog' => [
-        'menu_label' => 'Blog',
-        'menu_description' => 'Blog Artikel bearbeiten',
+    'catalogue' => [
+        'menu_label' => 'Catalogue',
+        'menu_description' => 'Catalogue Artikel bearbeiten',
         'posts' => 'Artikel',
-        'create_post' => 'Blog Artikel',
+        'create_post' => 'Catalogue Artikel',
         'categories' => 'Kategorien',
-        'create_category' => 'Blog Kategorie',
-        'tab' => 'Blog',
-        'access_posts' => 'Blog Artikel verwalten',
-        'access_categories' => 'Blog Kategorien verwalten',
-        'access_other_posts' => 'Blog Artikel anderer Benutzer verwalten',
-        'access_import_export' => 'Blog Artikel importieren oder exportieren',
+        'create_category' => 'Catalogue Kategorie',
+        'tab' => 'Catalogue',
+        'access_posts' => 'Catalogue Artikel verwalten',
+        'access_categories' => 'Catalogue Kategorien verwalten',
+        'access_other_posts' => 'Catalogue Artikel anderer Benutzer verwalten',
+        'access_import_export' => 'Catalogue Artikel importieren oder exportieren',
         'access_publish' => 'Kann Artikel veröffentlichen',
         'delete_confirm' => 'Bist du sicher?',
         'chart_published' => 'Veröffentlicht',
@@ -24,7 +24,7 @@ return [
         'chart_total' => 'Gesamt'
     ],
     'posts' => [
-        'list_title' => 'Blog Artikel verwalten',
+        'list_title' => 'Catalogue Artikel verwalten',
         'filter_category' => 'Kategorie',
         'filter_published' => 'Veröffentlichte ausblenden',
         'filter_date' => 'Date',
@@ -65,7 +65,7 @@ return [
         'date_format' => 'd. F Y',
     ],
     'categories' => [
-        'list_title' => 'Blog Kategorien verwalten',
+        'list_title' => 'Catalogue Kategorien verwalten',
         'new_category' => 'Neue Kategorie',
         'uncategorized' => 'Allgemein'
     ],
@@ -81,28 +81,28 @@ return [
         'reorder' => 'Kategorien sortieren'
     ],
     'menuitem' => [
-        'blog_category' => 'Blog Kategorie',
-        'all_blog_categories' => 'Alle Blog Kategorien',
-        'blog_post' => 'Blog Artikel',
-        'all_blog_posts' => 'Alle Blog Artikel',
-        'category_blog_posts' => 'Blog Kategorie Artikel'
+        'catalogue_category' => 'Catalogue Kategorie',
+        'all_catalogue_categories' => 'Alle Catalogue Kategorien',
+        'catalogue_post' => 'Catalogue Artikel',
+        'all_catalogue_posts' => 'Alle Catalogue Artikel',
+        'category_catalogue_posts' => 'Catalogue Kategorie Artikel'
     ],
     'settings' => [
-        'category_title' => 'Blog Kategorie-Übersicht',
-        'category_description' => 'Zeigt eine Blog Kategorien-Übersicht.',
+        'category_title' => 'Catalogue Kategorie-Übersicht',
+        'category_description' => 'Zeigt eine Catalogue Kategorien-Übersicht.',
         'category_slug' => 'Slug Parametername',
         'category_slug_description' => 'Der URL-Routen-Parameter welcher verwendet wird um die aktuelle Kategorie zu bestimmen. Wird von der Standard-Komponente benötigt um die aktive Kategorie zu markieren.',
         'category_display_empty' => 'Leere Kategorien anzeigen',
         'category_display_empty_description' => 'Kategorien zeigen welche keine Artikel besitzen.',
         'category_page' => 'Kategorien Seite',
         'category_page_description' => 'Name der Kategorien-Seiten-Datei für die Kategorien Links. Wird von der Standard-Komponente benötigt.',
-        'post_title' => 'Blog Artikel',
-        'post_description' => 'Zeigt einen Blog Artikel auf der Seite.',
+        'post_title' => 'Catalogue Artikel',
+        'post_description' => 'Zeigt einen Catalogue Artikel auf der Seite.',
         'post_slug' => 'Slug Parametername',
         'post_slug_description' => 'Der URL-Routen-Parameter um den Post mittels "Slug" zu bestimmen.',
         'post_category' => 'Kategorien-Seite',
         'post_category_description' => 'Name der Kategorien-Seiten-Datei für Kategorie-Links.',
-        'posts_title' => 'Blog Artikel-Übersicht',
+        'posts_title' => 'Catalogue Artikel-Übersicht',
         'posts_description' => 'Stellt eine Liste der neuesten Artikel auf der Seite dar.',
         'posts_pagination' => 'Blättern Parametername',
         'posts_pagination_description' => 'Der erwartete Parametername welcher für Seiten verwendet wird.',
@@ -122,10 +122,10 @@ return [
         'posts_except_post_description' => 'Gebe direkt die ID/URL oder eine Variable mit der Artikel-ID/URL an um diesen Artikel auszuschließen. Dieser Wert für von der Standard-Komponente verwendet.',
         'posts_except_categories' => 'Kategorien ausschließen',
         'posts_except_categories_description' => 'Gebe eine kommagetrennte Liste von Kategorie-Slugs oder eine Variable mit einer solchen Liste an um deren Artikel auszuschließen. Die Dieser Wert für von der Standard-Komponente verwendet.',
-        'rssfeed_blog' => 'Blog Seite',
-        'rssfeed_blog_description' => 'Name der Artikel-Seiten-Datei für die Links. Dieser Wert für von der Standard-Komponente verwendet.',
+        'rssfeed_catalogue' => 'Catalogue Seite',
+        'rssfeed_catalogue_description' => 'Name der Artikel-Seiten-Datei für die Links. Dieser Wert für von der Standard-Komponente verwendet.',
         'rssfeed_title' => 'RSS-Feed',
-        'rssfeed_description' => 'Erstellt einen RSS-Feed mit Artikeln aus dem Blog.',
+        'rssfeed_description' => 'Erstellt einen RSS-Feed mit Artikeln aus dem Catalogue.',
         'group_links' => 'Links',
         'group_exceptions' => 'Ausnahmen'
     ]

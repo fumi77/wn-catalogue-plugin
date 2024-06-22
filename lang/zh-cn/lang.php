@@ -5,7 +5,7 @@ return [
         'name' => '博客',
         'description' => '一个强大的博客平台.'
     ],
-    'blog' => [
+    'catalogue' => [
         'menu_label' => '博客',
         'menu_description' => '管理博客帖子',
         'posts' => '帖子',
@@ -78,10 +78,10 @@ return [
         'reorder' => '重新排序分类'
     ],
     'menuitem' => [
-        'blog_category' => '博客分类',
-        'all_blog_categories' => '所有博客分类',
-        'blog_post' => '博客帖子',
-        'all_blog_posts' => '所有博客帖子'
+        'catalogue_category' => '博客分类',
+        'all_catalogue_categories' => '所有博客分类',
+        'catalogue_post' => '博客帖子',
+        'all_catalogue_posts' => '所有博客帖子'
     ],
     'settings' => [
         'category_title' => '分类列表',
@@ -116,8 +116,8 @@ return [
         'posts_post_description' => ' 查看帖子的"详情"的页面文件. 该属性被默认组件partial所使用.',
         'posts_except_post' => '排除的帖子',
         'posts_except_post_description' => '输入帖子的ID/URL或者变量来排除你不想看见的帖子',
-        'rssfeed_blog' => '博客页面',
-        'rssfeed_blog_description' => '生成博客帖子首页面文件名称. 该属性被默认组件partial所使用.',
+        'rssfeed_catalogue' => '博客页面',
+        'rssfeed_catalogue_description' => '生成博客帖子首页面文件名称. 该属性被默认组件partial所使用.',
         'rssfeed_title' => 'RSS Feed',
         'rssfeed_description' => '从博客生成一个包含帖子的RSS Feed.'
     ]

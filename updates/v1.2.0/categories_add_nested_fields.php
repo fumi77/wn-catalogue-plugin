@@ -1,18 +1,18 @@
-<?php namespace Winter\Blog\Updates;
+<?php namespace Winter\Catalogue\Updates;
 
 use Schema;
 use Winter\Storm\Database\Updates\Migration;
-use Winter\Blog\Models\Category;
+use Winter\Catalogue\Models\Category;
 
 class CategoriesAddNestedFields extends Migration
 {
     public function up()
     {
-        if (Schema::hasColumn('rainlab_blog_categories', 'parent_id')) {
+        if (Schema::hasColumn('smart_catalogue_categories', 'parent_id')) {
             return;
         }
 
-        Schema::table('rainlab_blog_categories', function($table)
+        Schema::table('smart_catalogue_categories', function($table)
         {
             $table->integer('parent_id')->unsigned()->index()->nullable();
             $table->integer('nest_left')->nullable();
@@ -21,7 +21,7 @@ class CategoriesAddNestedFields extends Migration
         });
 
         Category::extend(function ($model) {
-            $model->setTable('rainlab_blog_categories');
+            $model->setTable('smart_catalogue_categories');
         });
 
         foreach (Category::all() as $category) {
@@ -30,7 +30,7 @@ class CategoriesAddNestedFields extends Migration
         }
 
         Category::extend(function ($model) {
-            $model->setTable('winter_blog_categories');
+            $model->setTable('smart_catalogue_categories');
         });
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Winter\Blog\Models;
+namespace Winter\Catalogue\Models;
 
 use Cms\Classes\Page as CmsPage;
 use Cms\Classes\Theme;
@@ -12,11 +12,11 @@ use Winter\Sitemap\Classes\DefinitionItem;
 
 class Category extends Model
 {
-    use \Winter\Blog\Traits\Urlable;
+    use \Winter\Catalogue\Traits\Urlable;
     use \Winter\Storm\Database\Traits\NestedTree;
     use \Winter\Storm\Database\Traits\Validation;
 
-    public $table = 'winter_blog_categories';
+    public $table = 'smart_catalogue_categories';
     public $implement = ['@Winter.Translate.Behaviors.TranslatableModel'];
 
     /*
@@ -42,13 +42,13 @@ class Category extends Model
     public $belongsToMany = [
         'posts' => [
             Post::class,
-            'table' => 'winter_blog_posts_categories',
+            'table' => 'smart_catalogue_posts_categories',
             'order' => 'published_at desc',
             'scope' => 'isPublished',
         ],
         'posts_count' => [
             Post::class,
-            'table' => 'winter_blog_posts_categories',
+            'table' => 'smart_catalogue_posts_categories',
             'scope' => 'isPublished',
             'count' => true,
         ]
@@ -104,7 +104,7 @@ class Category extends Model
     {
         $result = [];
 
-        if ($type == 'blog-category') {
+        if ($type == 'catalogue-category') {
             $result = [
                 'references'   => self::listSubCategoryOptions(),
                 'nesting'      => true,
@@ -112,7 +112,7 @@ class Category extends Model
             ];
         }
 
-        if ($type == 'all-blog-categories') {
+        if ($type == 'all-catalogue-categories') {
             $result = [
                 'dynamicItems' => true
             ];
@@ -124,7 +124,7 @@ class Category extends Model
             $pages = CmsPage::listInTheme($theme, true);
             $cmsPages = [];
             foreach ($pages as $page) {
-                if (!$page->hasComponent('blogPosts')) {
+                if (!$page->hasComponent('cataloguePosts')) {
                     continue;
                 }
 
@@ -132,7 +132,7 @@ class Category extends Model
                  * Component must use a category filter with a routing parameter
                  * eg: categoryFilter = "{{ :somevalue }}"
                  */
-                $properties = $page->getComponentProperties('blogPosts');
+                $properties = $page->getComponentProperties('cataloguePosts');
                 if (!isset($properties['categoryFilter']) || !preg_match('/{{\s*:/', $properties['categoryFilter'])) {
                     continue;
                 }
@@ -198,7 +198,7 @@ class Category extends Model
             return null;
         }
 
-        if ($item->type == 'blog-category') {
+        if ($item->type == 'catalogue-category') {
             // Attempt to get the category record for a specific category menu item
             if (!$item->reference) {
                 return null;
@@ -260,7 +260,7 @@ class Category extends Model
                 $result['items'] = $iterator($categories);
             }
         }
-        elseif ($item->type == 'all-blog-categories') {
+        elseif ($item->type == 'all-catalogue-categories') {
             $result = [
                 'items' => []
             ];
@@ -297,7 +297,7 @@ class Category extends Model
             'slug' => $this->slug,
         ];
 
-        $paramName = $this->getParamNameFromComponentProperty($page, 'blogPosts', 'categoryFilter');
+        $paramName = $this->getParamNameFromComponentProperty($page, 'cataloguePosts', 'categoryFilter');
         if ($paramName) {
             $params[$paramName] = $this->slug;
         }
